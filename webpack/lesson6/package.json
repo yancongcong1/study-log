@@ -1,7 +1,7 @@
 {
-  "name": "lesson5",
+  "name": "lesson6",
   "version": "1.0.0",
-  "description": "webpack lesson5",
+  "description": "webpack lesson6",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./conf/webpack.conf.js"
@@ -10,8 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.28.8",
+    "html-webpack-plugin": "^2.30.1",
     "lodash": "^4.17.4",
     "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^3.10.0"
   }
 }

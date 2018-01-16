@@ -6,14 +6,16 @@ module.exports = {
     // entry: ['./src/index.js', './src/print.js'],
     entry: {
         index: './src/index.js',
-        print: './src/print.js'
+        print: './src/print.js',
+        testExport: './src/textExport.js'
     },
     // entry: () => ['./src/index.js', './src/print.js'],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve('dist'),
         // pathinfo: true,
-        library: 'my_test',
+        // libraryExport: ['Test', 'testExport'],
+        library: ['MyTest', '[name]'],
         libraryTarget: 'umd'
         // __dirname是node中的全局变量，表示当前模块的为文件夹的绝对路径，webpack.conf.js的__dirname为D://....../lesson2
     }

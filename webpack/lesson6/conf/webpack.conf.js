@@ -1,8 +1,10 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
-    entry: ['./src/index.js', './src/index.css', './src/print.js'],
+    entry: ['./src/index.css', './src/print.js'],
     // entry: () => ['./src/index.js', './src/print.js'],
     output: {
         filename: 'main.bundle.js',
@@ -27,5 +29,9 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin(),
+        new UglifyJsPlugin()
+    ]
 };

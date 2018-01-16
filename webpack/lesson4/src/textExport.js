@@ -1,20 +1,20 @@
 import _ from 'lodash'
 
-class Test {
+class TestExport {
 
     constructor (config) {
-        if (!Test.instance) {
-            Test.instance = this
+        if (!TestExport.instance) {
+            TestExport.instance = this
         }
-        return Test.instance
+        return TestExport.instance
     }
 
-    hello () {
+    hello2 () {
         function component() {
             var element = document.createElement('div');
 
             // Lodash, currently included via a script, is required for this line to work
-            element.innerHTML = _.join(['Hello', 'webpack4'], ' ');
+            element.innerHTML = _.join(['Hello', 'webpack test Export'], ' ');
 
             return element;
         }
@@ -23,4 +23,4 @@ class Test {
 
 }
 
-export {Test}
+export {TestExport}
