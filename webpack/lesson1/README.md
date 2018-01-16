@@ -60,7 +60,7 @@
 ##### dist/index.html
 > <html>  
 >   &emsp;<head>  
->     &emsp;&emsp;<title>Getting Started</title>   
+>     &emsp;&emsp;<title>Getting Started</title>  
 >   &emsp;</head>  
 >   &emsp;<body>  
 >     &emsp;&emsp;<script src="bundle.js"></script>  
