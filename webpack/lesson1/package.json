@@ -1,0 +1,15 @@
+{
+  "name": "lesson1",
+  "version": "1.0.0",
+  "description": "webpack lesson1",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack ./src/index.js ./dist/bundle.js"
+  },
+  "author": "ycc",
+  "license": "ISC",
+  "devDependencies": {
+    "lodash": "^4.17.4",
+    "webpack": "^3.10.0"
+  }
+}
