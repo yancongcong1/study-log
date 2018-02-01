@@ -1,0 +1,38 @@
+[TOC]
+
+# Gitlab CI/CD简单流程
+
+## Getting started
+
+gitlab提供了持续集成的服务，为了使用这个服务，我们需要做一些准备工作：
+
+1. 在项目仓库的`根目录`添加一个`.gitlab-ci.yml`文件
+2. 给你的项目配置一个Runner
+
+接下来我们就简单执行以下这两个操作，如果不懂为什么这么做，不要着急，后面会全部涉及到的，现在你只需要跟随着我的脚步走下去没有问题就ok了。
+
+> **NOTE：以下所有的项目必须放在gitlab仓库中才可以使CI/CD生效。**
+
+
+
+## 示例步骤
+
+1. 编写.gitlab-ci.yml
+
+![.gitlab-ci.yml](https://github.com/yancongcong1/study-log/blob/master/gitlab-ci/static/images/lesson2-1.png)
+
+2. 试着提交以下，打开gitlab仓库CI/CD-->pipline选项，查看是否出现以下内容：
+
+![CI/CD pipline](https://github.com/yancongcong1/study-log/blob/master/gitlab-ci/static/images/lesson2-2.png)
+
+   如果你的效果和我的差不多，那么说明你已经成功了！恭喜你已经完成了第一步！
+
+------
+
+嗯？等等，怎么感觉有什么地方不对，不是准备工作里还有一个Runner的配置吗，为什么我们什么都没有做但是结果却成功了，一脸懵逼啊。
+
+别着急，虽然我们没有自动配置Runner，但是gitlab默认会给我们提供一些公共的Runner，这些Runner可以在项目的仓库进行查看，具体Setting-->CI/CD-->Runner Setting(expand)，有的同学可能纳闷了，为什么我的Setting中没有这个选项，那是因为你的权限不够，你可以自己创建一个项目进行实验。
+
+------
+
+那么大家可能有疑问，Runner到底是什么？我们怎么选择使用这些公开的Runner？如何搭建自己的Runner？如何配置Runner？所有的东西都将在下一节中展开。

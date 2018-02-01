@@ -9,6 +9,7 @@
 ---
 
 ### 后端
+> - #### [gitlab ci学习记录](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
 
 ---
 
