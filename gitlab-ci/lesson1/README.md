@@ -26,7 +26,7 @@ CI/CD(持续集成/持续交付)指的是，频繁地将代码集成到主干。
 
 > 主要介绍内容包括：
 >
-> 1. gitlab-runner如何安装以及配置
+> 1. [gitlab-runner如何安装以及配置](https://github.com/yancongcong1/study-log/blob/master/gitlab-ci/lesson3/README.md)
 > 2. .gitlab-ci.yml如何配置
 > 3. pipeline
 
