@@ -319,3 +319,17 @@ github网址：[docker-in-docker](https://github.com/jpetazzo/dind)
   ```shell
   docker run --rm -t -i -v $(pwd)/src:/home/app/src test-image:latest run_app_tests
   ```
+
+## 实战以及遇到的问题
+
+实战参考第四节
+
+Q：使用docker打包镜像时报错：COPY failed: Forbidden path outside the build context: ../dist
+
+问题描述：
+
+1、具体执行命令：docker build -t sakura-client-nginx ./docker
+
+2、文件结构如下：![](https://gitlab.com/yancongcong1/CICD-Test/uploads/35ba86562c5b33bf2cbd098acf269e7e/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png)
+
+A：[解决办法](https://howtovault.com/posts/how-to-fix-copy-failed-forbidden-path-outside-the-build-context-in-docker/)
