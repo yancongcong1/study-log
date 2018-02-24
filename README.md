@@ -10,6 +10,8 @@
 
 ### 后端
 > - #### [gitlab ci学习记录](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
+> - #### [spring学习记录](https://github.com/yancongcong1/study-log/tree/master/spring)
+> - #### [设计模式学习记录](https://github.com/yancongcong1/study-log/tree/master/design-model)
 
 ---
 
