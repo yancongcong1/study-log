@@ -23,13 +23,13 @@ Gitlab CI过程可以使用Docker Engine测试和构建任何应用。
 
 **image**
 
-关键字image是docker镜像的名称，docker通过启动镜像来执行CI任务。
+image---string/hash，是docker镜像的名称，docker通过启动镜像来执行CI任务。
 
 默认情况下，executor会从Docker Hub拉取镜像，但是可以通过在gitlab-runner/config.toml中配置 [Docker pull policy](https://docs.gitlab.com/runner/executors/docker.html#how-pull-policies-work) 来从本地拉取镜像。
 
 **services**
 
-关键字services定义了在job期间与image定义的镜像关联起来的另外的镜像，这样的话我们就能在构建期间使用service镜像了。
+services---array，定义了在job期间与image定义的镜像关联起来的另外的镜像，这样的话我们就能在构建期间使用service镜像了。
 
 service镜像可以运行任何应用，但是大多数情况下通常是一个数据库服务，例如mysql。这样的话我们可以方便快速的将mysql当作一个容器来启动运行，而不是安装一个mysql服务。
 
@@ -161,6 +161,8 @@ $ docker push my-registry:5000/my-image
 ### 使用shell执行构建
 
 在准备完成之后，我们可以根据以下步骤来实现我们的目的：
+
+**NOTE：除了shell，其他方式只能使用docker命令来执行构建(有待深入探讨)**
 
 1. 首先需要在注册runner时选择shell作为executor
 
