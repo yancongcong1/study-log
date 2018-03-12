@@ -27,7 +27,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
                 this.humidity = weatherData.getHumidity();
                 this.pressure = weatherData.getPressure();
             } else {
-                // TODO 解析arg对象
+                // 解析arg对象
             }
             display();
         }
