@@ -6,3 +6,5 @@
 ### - [lesson4 工厂模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson4)
 ### - [lesson5 单例模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson5)
 ### - [lesson6 命令模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson6)
+### - [lesson7 适配器模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson7)
+### - [lesson8 外观模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson8)
