@@ -8,3 +8,4 @@
 ### - [lesson6 命令模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson6)
 ### - [lesson7 适配器模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson7)
 ### - [lesson8 外观模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson8)
+### - [lesson9 模板方法模式](https://github.com/yancongcong1/study-log/tree/master/design-model/lesson9)
