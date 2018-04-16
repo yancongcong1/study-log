@@ -3,6 +3,10 @@
 ```
 ---
 
+### 工具
+> - #### [svn](https://github.com/yancongcong1/study-log/tree/master/svn)
+> - #### [git](https://github.com/yancongcong1/study-log/tree/master/git)
+
 ### 前端
 > - #### [webpack](https://github.com/yancongcong1/study-log/tree/master/webpack)
 
@@ -12,11 +16,12 @@
 > - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
 > - #### [spring produces](https://github.com/yancongcong1/study-log/tree/master/spring)
 > - #### [设计模式](https://github.com/yancongcong1/study-log/tree/master/design-model)
-> - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
+> - #### [maven](https://github.com/yancongcong1/study-log/tree/master/maven)
+> - #### [gradle](https://github.com/yancongcong1/study-log/tree/master/gradle)
 
 ---
 
-### 分布式开发
+### 分布式
 > - #### [zookeeper](https://github.com/yancongcong1/study-log/tree/master/zookeeper)
 ---
 
@@ -26,3 +31,5 @@
 ---
 
 ### 运维
+> - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
+> - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
