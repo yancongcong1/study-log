@@ -5,7 +5,7 @@ package lesson3.first.beverage;
  * 饮料的抽象类
  */
 public abstract class Beverage {
-    protected String description = "unknown beverage";
+    protected String description = "unknown menu";
 
     public String getDescription() {
         return this.description;
