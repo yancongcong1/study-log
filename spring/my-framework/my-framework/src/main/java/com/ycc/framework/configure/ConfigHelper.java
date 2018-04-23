@@ -36,30 +36,38 @@ public class ConfigHelper {
     }
 
     public static String getDatabaseDriver() {
-        return properties.getProperty(Constants.DATABASE_DRIVER);
+        return getString(Constants.DATABASE_DRIVER);
     }
 
     public static String getDatabaseUrl() {
-        return properties.getProperty(Constants.DATABASE_URL);
+        return getString(Constants.DATABASE_URL);
     }
 
     public static String getDatabaseUsername() {
-        return properties.getProperty(Constants.DATABASE_USERNAME);
+        return getString(Constants.DATABASE_USERNAME);
     }
 
     public static String getDatabasePassword() {
-        return properties.getProperty(Constants.DATABASE_PASSWORD);
+        return getString(Constants.DATABASE_PASSWORD);
     }
 
     public static String getBasePackage() {
-        return properties.getProperty(Constants.BASE_PACKAGE);
+        return getString(Constants.BASE_PACKAGE);
     }
 
     public static String getJspPath() {
-        return properties.getProperty(Constants.JSP_PATH);
+        return getString(Constants.JSP_PATH);
     }
 
     public static String getAssetPath() {
-        return properties.getProperty(Constants.ASSET_PATH);
+        return getString(Constants.ASSET_PATH);
+    }
+
+    private static String getString (String key) {
+        return properties.getProperty(key);
+    }
+
+    private static String getString(String key, String defaultVal) {
+        return properties.getProperty(key, defaultVal);
     }
 }
