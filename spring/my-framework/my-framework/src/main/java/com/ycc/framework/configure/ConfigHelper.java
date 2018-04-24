@@ -4,8 +4,8 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Enumeration;
 import java.util.Properties;
-import java.util.logging.Level;
 
 /**
  * Get value from property files which define in the {@link Constants}.
@@ -21,7 +21,13 @@ public class ConfigHelper {
     static {
         try {
             inputStream = ClassLoader.getSystemResourceAsStream(Constants.CONFIG_FILE);
-            properties.load(inputStream);
+            if (inputStream != null) {
+                properties.load(inputStream);
+                Enumeration<String> enumeration = (Enumeration<String>) properties.propertyNames();
+                while (enumeration.hasMoreElements()) {
+                    System.out.println(enumeration.nextElement());
+                }
+            }
         } catch (IOException e) {
             logger.error("Reader error");
         } finally {
@@ -52,15 +58,15 @@ public class ConfigHelper {
     }
 
     public static String getBasePackage() {
-        return getString(Constants.BASE_PACKAGE);
+        return getString(Constants.BASE_PACKAGE, "com.ycc.framework");
     }
 
     public static String getJspPath() {
-        return getString(Constants.JSP_PATH);
+        return getString(Constants.JSP_PATH, "/jsp");
     }
 
     public static String getAssetPath() {
-        return getString(Constants.ASSET_PATH);
+        return getString(Constants.ASSET_PATH, "/asset");
     }
 
     private static String getString (String key) {

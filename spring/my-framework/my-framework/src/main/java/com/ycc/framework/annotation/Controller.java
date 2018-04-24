@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Tag the capacity of the class is controller the request and return the response.
+ * Tag the capacity of the class is control the request and return the response.
  *
  * created by ycc at 2018\4\16 0016
  */

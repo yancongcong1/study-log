@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Get the set of the class by the annotation.
+ *
+ * @see com.ycc.framework.annotation
+ *
  * created by ycc at 2018\4\23 0023
  */
 public class ClassHelper {

@@ -15,7 +15,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
- *
+ * Get the set of the class on the package or load the class into memory.
  *
  * created by ycc at 2018\4\23 0023
  */
@@ -24,6 +24,10 @@ public class ClassUtil {
 
     public static ClassLoader getClassLoader() {
         return Thread.currentThread().getContextClassLoader();
+    }
+
+    public static Class<?> loadClass(String className) {
+        return loadClass(className, false);
     }
 
     public static Class<?> loadClass(String className, boolean isInitialized) {
@@ -45,7 +49,7 @@ public class ClassUtil {
                 URL url = urls.nextElement();
                 String protocol = url.getProtocol();
                 if (protocol.equals("file")) {
-                    String packagePath = url.getPath().replaceAll("20%", "");
+                    String packagePath = url.getPath().replaceAll("%20", " ");
                     addClass(classes, packagePath, packageName);
                 } else if (protocol.equals("jar")) {
                     JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();
@@ -94,13 +98,13 @@ public class ClassUtil {
                 if (subPackageName != null && !"".equals(subPackageName)) {
                     subPackageName = packageName + "." + subPackageName;
                 }
-                addClass(classes, packagePath, packageName);
+                addClass(classes, subPackagePath, subPackageName);
             }
         }
     }
 
     private static void doAddClass(Set<Class<?>> classes, String className) {
-        Class<?> clazz = loadClass(className, false);
+        Class<?> clazz = loadClass(className);
         classes.add(clazz);
     }
 

@@ -10,7 +10,9 @@ import java.lang.annotation.Target;
  *
  * created by ycc at 2018\4\16 0016
  */
-@Target(ElementType.TYPE)
+@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Action {
+public @interface Mapping {
+    String method() default "get";
+    String url() default "/";
 }
