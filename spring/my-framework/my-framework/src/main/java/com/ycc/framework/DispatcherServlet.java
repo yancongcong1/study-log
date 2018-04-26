@@ -5,7 +5,6 @@ import com.ycc.framework.bean.ReflectionUtil;
 import com.ycc.framework.configure.ConfigHelper;
 import com.ycc.framework.controller.ControllerHelper;
 import com.ycc.framework.controller.Handler;
-import com.ycc.framework.controller.Request;
 import com.ycc.framework.request.Param;
 import com.ycc.framework.response.Data;
 import com.ycc.framework.response.View;
@@ -14,9 +13,7 @@ import com.ycc.framework.utils.JsonUtil;
 import com.ycc.framework.utils.StreamUtil;
 
 import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,12 +34,6 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         InitializeLoader.init();
-        Map<Request, Handler> test = ControllerHelper.getAllHandlers();
-        ServletContext servletContext = config.getServletContext();
-        ServletRegistration jspServlet = servletContext.getServletRegistration("jsp");
-        jspServlet.addMapping(ConfigHelper.getJspPath() + "*");
-        ServletRegistration assetServlet = servletContext.getServletRegistration("asset");
-        assetServlet.addMapping(ConfigHelper.getAssetPath() + "*");
     }
 
     @Override
@@ -63,7 +54,7 @@ public class DispatcherServlet extends HttpServlet {
                 param.addParam(paramName, parameter);
             }
             String body = CodeUtil.decodeUrl(StreamUtil.getStream(req.getInputStream()));
-            if (body != null) {
+            if (body != null && !"".equals(body)) {
                 String[] bodyParams = body.split("&");
                 for (String bodyParam : bodyParams) {
                     String[] paramBody = bodyParam.split("=");
@@ -73,7 +64,7 @@ public class DispatcherServlet extends HttpServlet {
                 }
             }
 
-            Object result = ReflectionUtil.invokeMethod(controllerBean, handleMethod, param);
+            Object result = ReflectionUtil.invokeMethod(controllerBean, handleMethod, param.getParams());
 
             if (result instanceof View) {
                 View view = (View) result;

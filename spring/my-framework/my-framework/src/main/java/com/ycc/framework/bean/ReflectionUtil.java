@@ -1,9 +1,14 @@
 package com.ycc.framework.bean;
 
+import com.ycc.framework.annotation.Param;
 import org.apache.log4j.Logger;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Get the way to the class by reflect.
@@ -28,11 +33,25 @@ public final class ReflectionUtil {
         return object;
     }
 
-    public static Object invokeMethod(Object object, Method method, Object... args) {
+    public static Object invokeMethod(Object object, Method method, Map<String, Object> paramMap) {
         Object result;
         try {
             method.setAccessible(true);
-            result = method.invoke(object, args);
+            List<Object> params = new ArrayList<>();
+            Annotation[][] parameterAnnotations = method.getParameterAnnotations();
+            for (Annotation[] annotations : parameterAnnotations) {
+                for (Annotation annotation : annotations) {
+                    if (annotation instanceof Param) {
+                        Param param = (Param) annotation;
+                        Object value = paramMap.get(param.value());
+                        if (value == null) {
+                            throw new RuntimeException("参数传递出错, 缺少参数" + param.value());
+                        }
+                        params.add(value);
+                    }
+                }
+            }
+            result = method.invoke(object, params.toArray());
         } catch (Exception e) {
             logger.error("调用方法出错", e);
             throw new RuntimeException(e);
