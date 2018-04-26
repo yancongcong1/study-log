@@ -3,6 +3,8 @@ package com.ycc.framework.request;
 import java.util.*;
 
 /**
+ * Put the param of the request to the map struct.
+ *
  * created by ycc at 2018\4\24 0024
  */
 public class Param {

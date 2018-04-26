@@ -3,10 +3,11 @@ package com.ycc.framework;
 import com.ycc.framework.annotation.Controller;
 import com.ycc.framework.annotation.Mapping;
 import com.ycc.framework.annotation.Param;
-import com.ycc.framework.loader.ClassHelper;
 import com.ycc.framework.response.Data;
 
 /**
+ * This controller isn't the member of the framework,it was built for test.
+ *
  * created by ycc at 2018\4\24 0024
  */
 @Controller
@@ -19,9 +20,4 @@ public class TestController {
         return data;
     }
 
-    public static void main(String[] args) {
-//        System.out.println(ConfigHelper.getBasePackage());
-        System.out.println(ClassHelper.getClassSet());
-
-    }
 }

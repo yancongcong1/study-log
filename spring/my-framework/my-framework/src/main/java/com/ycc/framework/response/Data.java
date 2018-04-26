@@ -1,6 +1,8 @@
 package com.ycc.framework.response;
 
 /**
+ * Build the response of the data.
+ *
  * created by ycc at 2018\4\24 0024
  */
 public class Data {

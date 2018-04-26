@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
+ * Read the input stream and transport it to a string.
+ *
  * created by ycc at 2018\4\24 0024
  */
 public class StreamUtil {

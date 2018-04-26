@@ -3,9 +3,9 @@ package com.ycc.framework.bean;
 import com.ycc.framework.annotation.Param;
 import org.apache.log4j.Logger;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -38,18 +38,14 @@ public final class ReflectionUtil {
         try {
             method.setAccessible(true);
             List<Object> params = new ArrayList<>();
-            Annotation[][] parameterAnnotations = method.getParameterAnnotations();
-            for (Annotation[] annotations : parameterAnnotations) {
-                for (Annotation annotation : annotations) {
-                    if (annotation instanceof Param) {
-                        Param param = (Param) annotation;
-                        Object value = paramMap.get(param.value());
-                        if (value == null) {
-                            throw new RuntimeException("参数传递出错, 缺少参数" + param.value());
-                        }
-                        params.add(value);
-                    }
+            Parameter[] parameters = method.getParameters();
+            for (Parameter parameter : parameters) {
+                Param param = parameter.getAnnotation(Param.class);
+                Object value = paramMap.get(param.value());
+                if (value == null) {
+                    throw new RuntimeException("参数传递出错, 缺少参数" + param.value());
                 }
+                params.add(value);
             }
             result = method.invoke(object, params.toArray());
         } catch (Exception e) {

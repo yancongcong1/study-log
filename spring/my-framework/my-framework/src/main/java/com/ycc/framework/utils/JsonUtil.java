@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import java.io.IOException;
 
 /**
+ * As a transporter between json and Object.
+ *
  * created by ycc at 2018\4\24 0024
  */
 public class JsonUtil {

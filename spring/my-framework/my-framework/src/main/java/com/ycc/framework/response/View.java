@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Build the response of the view.
+ *
  * created by ycc at 2018\4\24 0024
  */
 public class View {

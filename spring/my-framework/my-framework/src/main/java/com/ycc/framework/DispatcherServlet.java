@@ -26,6 +26,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * The control dispatcher servlet.
+ *
  * created by ycc at 2018\4\24 0024
  */
 @WebServlet(urlPatterns = "/", loadOnStartup = 0)

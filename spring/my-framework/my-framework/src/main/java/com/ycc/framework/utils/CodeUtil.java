@@ -7,6 +7,8 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 /**
+ * Encode and decode the string.
+ *
  * created by ycc at 2018\4\24 0024
  */
 public class CodeUtil {
