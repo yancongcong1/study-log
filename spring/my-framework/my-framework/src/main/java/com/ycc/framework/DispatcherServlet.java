@@ -30,7 +30,7 @@ import java.util.Set;
  *
  * created by ycc at 2018\4\24 0024
  */
-@WebServlet(urlPatterns = "/", loadOnStartup = 0)
+@WebServlet(urlPatterns = "/*", loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {
 
     @Override
@@ -41,7 +41,7 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String reqMethod = req.getMethod().toLowerCase();
-        String pathInfo = req.getServletPath();
+        String pathInfo = req.getPathInfo();
         Enumeration<String> paramNames = req.getParameterNames();
         Handler handler = ControllerHelper.getHandler(reqMethod, pathInfo);
         if (handler != null) {
@@ -73,14 +73,15 @@ public class DispatcherServlet extends HttpServlet {
                 String path = view.getPath();
                 if (path != null) {
                     if (path.startsWith("/")) {
-                        resp.sendRedirect(req.getContextPath() + path);
+                        resp.sendRedirect(req.getContextPath() + path + ".jsp");
                     } else {
                         Map<String, Object> data = view.getData();
                         Set<Map.Entry<String, Object>> entries = data.entrySet();
                         for (Map.Entry<String, Object> entry: entries) {
                             req.setAttribute(entry.getKey(), entry.getValue());
                         }
-                        req.getRequestDispatcher(ConfigHelper.getJspPath() + path).forward(req, resp);
+                        String tempPath = ConfigHelper.getJspPath() + "/" + path + ".jsp";
+                        req.getRequestDispatcher(tempPath).forward(req, resp);
                     }
                 }
             } else if (result instanceof Data) {

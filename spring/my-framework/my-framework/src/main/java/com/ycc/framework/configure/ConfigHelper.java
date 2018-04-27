@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Enumeration;
 import java.util.Properties;
 
 /**
@@ -23,10 +22,6 @@ public class ConfigHelper {
             inputStream = ClassLoader.getSystemResourceAsStream(Constants.CONFIG_FILE);
             if (inputStream != null) {
                 properties.load(inputStream);
-                Enumeration<String> enumeration = (Enumeration<String>) properties.propertyNames();
-                while (enumeration.hasMoreElements()) {
-                    System.out.println(enumeration.nextElement());
-                }
             }
         } catch (IOException e) {
             logger.error("Reader error");
@@ -62,7 +57,7 @@ public class ConfigHelper {
     }
 
     public static String getJspPath() {
-        return getString(Constants.JSP_PATH, "/jsp");
+        return getString(Constants.JSP_PATH, "/WEB-INF/jsp");
     }
 
     public static String getAssetPath() {

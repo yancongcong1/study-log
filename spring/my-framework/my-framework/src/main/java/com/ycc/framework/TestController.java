@@ -4,6 +4,7 @@ import com.ycc.framework.annotation.Controller;
 import com.ycc.framework.annotation.Mapping;
 import com.ycc.framework.annotation.Param;
 import com.ycc.framework.response.Data;
+import com.ycc.framework.response.View;
 
 /**
  * This controller isn't the member of the framework,it was built for test.
@@ -20,4 +21,9 @@ public class TestController {
         return data;
     }
 
+    @Mapping(method = "get", url = "/view")
+    public View getView() {
+        View view = new View("myFirst");
+        return view;
+    }
 }
