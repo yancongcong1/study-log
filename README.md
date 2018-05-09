@@ -14,7 +14,7 @@
 
 ### 后端
 > - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
-> - #### [spring produces](https://github.com/yancongcong1/study-log/tree/master/spring)
+> - #### [spring](https://github.com/yancongcong1/study-log/tree/master/spring)
 > - #### [设计模式](https://github.com/yancongcong1/study-log/tree/master/design-model)
 > - #### [maven](https://github.com/yancongcong1/study-log/tree/master/maven)
 > - #### [gradle](https://github.com/yancongcong1/study-log/tree/master/gradle)

@@ -24,6 +24,7 @@
 ---
 
 # 拓展
-### - [介绍依赖机制](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
-### - [介绍仓库](https://maven.apache.org/guides/introduction/introduction-to-repositories.html)
-### - [介绍不同packing类型的默认生命周期](https://maven.apache.org/ref/3.5.3/maven-core/default-bindings.html)
+### - [依赖机制](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
+### - [仓库](https://maven.apache.org/guides/introduction/introduction-to-repositories.html)
+### - [介不同packing类型的默认生命周期](https://maven.apache.org/ref/3.5.3/maven-core/default-bindings.html)
+### - [插件列表](https://maven.apache.org/plugins/)

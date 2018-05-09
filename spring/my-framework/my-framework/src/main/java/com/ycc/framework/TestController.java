@@ -3,6 +3,7 @@ package com.ycc.framework;
 import com.ycc.framework.annotation.Controller;
 import com.ycc.framework.annotation.Mapping;
 import com.ycc.framework.annotation.Param;
+import com.ycc.framework.configure.ConfigHelper;
 import com.ycc.framework.response.Data;
 import com.ycc.framework.response.View;
 
@@ -23,7 +24,7 @@ public class TestController {
 
     @Mapping(method = "get", url = "/view")
     public View getView() {
-        View view = new View("myFirst");
+        View view = new View(ConfigHelper.getJspPath() + "a");
         return view;
     }
 }

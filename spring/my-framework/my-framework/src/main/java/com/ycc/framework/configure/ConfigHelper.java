@@ -57,7 +57,7 @@ public class ConfigHelper {
     }
 
     public static String getJspPath() {
-        return getString(Constants.JSP_PATH, "/WEB-INF/jsp");
+        return getString(Constants.JSP_PATH, "/jsp/");
     }
 
     public static String getAssetPath() {
