@@ -1,4 +1,4 @@
-package com.ycc.framework.configure;
+package com.ycc.framework.ioc.configure;
 
 /**
  * Define the name what used in project and how to configure them in the property file.

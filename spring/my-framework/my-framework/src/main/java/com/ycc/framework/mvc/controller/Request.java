@@ -1,4 +1,4 @@
-package com.ycc.framework.controller;
+package com.ycc.framework.mvc.controller;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

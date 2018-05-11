@@ -1,11 +1,11 @@
 package com.ycc.framework;
 
-import com.ycc.framework.annotation.Controller;
-import com.ycc.framework.annotation.Mapping;
-import com.ycc.framework.annotation.Param;
-import com.ycc.framework.configure.ConfigHelper;
-import com.ycc.framework.response.Data;
-import com.ycc.framework.response.View;
+import com.ycc.framework.mvc.annotation.Controller;
+import com.ycc.framework.mvc.annotation.Mapping;
+import com.ycc.framework.mvc.annotation.Param;
+import com.ycc.framework.ioc.configure.ConfigHelper;
+import com.ycc.framework.mvc.response.Data;
+import com.ycc.framework.mvc.response.View;
 
 /**
  * This controller isn't the member of the framework,it was built for test.

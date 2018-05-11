@@ -1,4 +1,4 @@
-package com.ycc.framework.response;
+package com.ycc.framework.mvc.response;
 
 import java.util.HashMap;
 import java.util.Map;

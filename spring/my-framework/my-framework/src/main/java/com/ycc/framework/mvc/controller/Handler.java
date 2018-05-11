@@ -1,4 +1,4 @@
-package com.ycc.framework.controller;
+package com.ycc.framework.mvc.controller;
 
 import java.lang.reflect.Method;
 

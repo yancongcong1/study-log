@@ -1,13 +1,13 @@
 package com.ycc.framework;
 
-import com.ycc.framework.bean.BeanHelper;
-import com.ycc.framework.bean.ReflectionUtil;
-import com.ycc.framework.configure.ConfigHelper;
-import com.ycc.framework.controller.ControllerHelper;
-import com.ycc.framework.controller.Handler;
-import com.ycc.framework.request.Param;
-import com.ycc.framework.response.Data;
-import com.ycc.framework.response.View;
+import com.ycc.framework.ioc.bean.BeanHelper;
+import com.ycc.framework.ioc.bean.ReflectionUtil;
+import com.ycc.framework.ioc.configure.ConfigHelper;
+import com.ycc.framework.mvc.controller.ControllerHelper;
+import com.ycc.framework.mvc.controller.Handler;
+import com.ycc.framework.mvc.request.Param;
+import com.ycc.framework.mvc.response.Data;
+import com.ycc.framework.mvc.response.View;
 import com.ycc.framework.utils.CodeUtil;
 import com.ycc.framework.utils.JsonUtil;
 import com.ycc.framework.utils.StreamUtil;

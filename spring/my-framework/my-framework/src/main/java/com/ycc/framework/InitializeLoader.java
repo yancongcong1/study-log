@@ -1,10 +1,10 @@
 package com.ycc.framework;
 
-import com.ycc.framework.bean.BeanHelper;
-import com.ycc.framework.controller.ControllerHelper;
-import com.ycc.framework.ioc.IocHelper;
-import com.ycc.framework.loader.ClassHelper;
-import com.ycc.framework.loader.ClassUtil;
+import com.ycc.framework.ioc.bean.BeanHelper;
+import com.ycc.framework.mvc.controller.ControllerHelper;
+import com.ycc.framework.ioc.ioc.IocHelper;
+import com.ycc.framework.ioc.loader.ClassHelper;
+import com.ycc.framework.ioc.loader.ClassUtil;
 
 /**
  * Concentrate to load the class.(this step maybe needless)

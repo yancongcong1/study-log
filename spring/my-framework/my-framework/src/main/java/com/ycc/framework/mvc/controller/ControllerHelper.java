@@ -1,7 +1,7 @@
-package com.ycc.framework.controller;
+package com.ycc.framework.mvc.controller;
 
-import com.ycc.framework.annotation.Mapping;
-import com.ycc.framework.loader.ClassHelper;
+import com.ycc.framework.mvc.annotation.Mapping;
+import com.ycc.framework.ioc.loader.ClassHelper;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;

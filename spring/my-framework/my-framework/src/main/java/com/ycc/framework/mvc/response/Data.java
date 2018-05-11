@@ -1,4 +1,4 @@
-package com.ycc.framework.response;
+package com.ycc.framework.mvc.response;
 
 /**
  * Build the response of the data.

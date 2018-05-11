@@ -33,3 +33,4 @@
 ### 运维
 > - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
 > - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
+> - #### [nginx](https://github.com/yancongcong1/study-log/tree/master/nginx)

@@ -1,6 +1,6 @@
-package com.ycc.framework.bean;
+package com.ycc.framework.ioc.bean;
 
-import com.ycc.framework.annotation.Param;
+import com.ycc.framework.mvc.annotation.Param;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.Field;

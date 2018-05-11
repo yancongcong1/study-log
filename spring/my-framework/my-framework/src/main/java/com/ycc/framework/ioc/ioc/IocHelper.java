@@ -1,8 +1,8 @@
-package com.ycc.framework.ioc;
+package com.ycc.framework.ioc.ioc;
 
-import com.ycc.framework.annotation.Inject;
-import com.ycc.framework.bean.BeanHelper;
-import com.ycc.framework.bean.ReflectionUtil;
+import com.ycc.framework.ioc.annotation.Inject;
+import com.ycc.framework.ioc.bean.BeanHelper;
+import com.ycc.framework.ioc.bean.ReflectionUtil;
 
 import java.lang.reflect.Field;
 import java.util.Map;

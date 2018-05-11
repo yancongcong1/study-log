@@ -1,4 +1,4 @@
-package com.ycc.framework.request;
+package com.ycc.framework.mvc.request;
 
 import java.util.*;
 

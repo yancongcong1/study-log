@@ -1,4 +1,4 @@
-package com.ycc.framework.annotation;
+package com.ycc.framework.mvc.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

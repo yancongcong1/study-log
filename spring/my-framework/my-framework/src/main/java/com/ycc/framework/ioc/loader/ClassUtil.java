@@ -1,6 +1,6 @@
-package com.ycc.framework.loader;
+package com.ycc.framework.ioc.loader;
 
-import com.ycc.framework.configure.ConfigHelper;
+import com.ycc.framework.ioc.configure.ConfigHelper;
 import org.apache.log4j.Logger;
 
 import java.io.File;

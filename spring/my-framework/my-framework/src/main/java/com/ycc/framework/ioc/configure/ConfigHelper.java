@@ -1,4 +1,4 @@
-package com.ycc.framework.configure;
+package com.ycc.framework.ioc.configure;
 
 import org.apache.log4j.Logger;
 

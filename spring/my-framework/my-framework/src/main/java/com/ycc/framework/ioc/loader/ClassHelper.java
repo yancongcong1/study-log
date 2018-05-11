@@ -1,8 +1,8 @@
-package com.ycc.framework.loader;
+package com.ycc.framework.ioc.loader;
 
-import com.ycc.framework.annotation.Controller;
-import com.ycc.framework.annotation.Service;
-import com.ycc.framework.configure.ConfigHelper;
+import com.ycc.framework.mvc.annotation.Controller;
+import com.ycc.framework.mvc.annotation.Service;
+import com.ycc.framework.ioc.configure.ConfigHelper;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Get the set of the class by the annotation.
  *
- * @see com.ycc.framework.annotation
+ * @see com.ycc.framework.ioc.annotation
  *
  * created by ycc at 2018\4\23 0023
  */

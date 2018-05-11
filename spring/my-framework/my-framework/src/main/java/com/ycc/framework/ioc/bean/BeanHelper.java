@@ -1,6 +1,6 @@
-package com.ycc.framework.bean;
+package com.ycc.framework.ioc.bean;
 
-import com.ycc.framework.loader.ClassHelper;
+import com.ycc.framework.ioc.loader.ClassHelper;
 
 import java.util.HashMap;
 import java.util.Map;
