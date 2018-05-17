@@ -52,6 +52,46 @@ linux安装nginx也分好多中不同的方法，这边介绍的是通过源码�
 
 ![nginx首页](https://github.com/yancongcong1/study-log/blob/master/nginx/static/images/lesson2-2.png)
 
+> 编译源码配置详解：
+>
+> - --prefix=path
+>
+>   prefix定义了nginx的安装目录。可以使用相对路径或者绝对路径，相对路径相对于configure路径默认为/usr/local/nginx目录。
+>
+>
+> - --sbin-path=path
+>
+>   设置启动nginx的可执行文件的名字。默认为nginx，目录为**prefix**/sbin/nginx。prefix为上面的配置。
+>
+> - --modules-path=path
+>
+>   设置动态模块的安装目录，默认为**prefix**/modules
+>
+> - --conf-path=path
+>
+>   设置nginx.conf配置文件的路径以及名称。在启动nginx时可以通过命令行添加-c file来加载指定的配置文件，默认为**prefix**/conf/nginx.conf。
+>
+> - --error-log-path=path
+>
+>   设置基础的错误、警告、诊断信息的日志文件的路径以及名字，该文件可以在安装nginx后通过nginx.conf配置文件来改变，默认为**prefix**/logs/error.log。
+>
+> - --pid-path=path
+>
+>   设置nginx主进程进程ID存放文件nginx.pid的路径以及名称。可以在安装nginx后通过nginx.conf配置文件进行修改，默认为**prefix**/logs/nginx.pid。
+>
+> - --user=name
+>
+>   设置工作流用户的名称，该用户名会在外部访问nginx资源时使用，可以在nginx.conf配置文件中进行修改，默认为nobody。
+>
+> - --group=name
+>
+>   设置工作流用户组的名称，会在外部访问nginx资源时使用，可以在nginx.conf配置文件中进行修改，默认为nobody。
+>
+> - --with-select_module
+>   --without-select_module
+>
+>   启用或者禁用构建动态模块。如果平台不支持该模块，将会自动禁用构建。
+
 
 
 ## 遇到的问题
