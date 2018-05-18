@@ -9,7 +9,7 @@
 ## 启动命令
 
 ```
-nginx -c file
+nginx -C file
 ```
 
 直接运行nginx的可执行文件就可以启动nginx，同时可以使用-c显式的指定配置文件。
@@ -84,3 +84,4 @@ ps -aux | grep nginx
 kill -s quit XXX(port)
 ```
 
+> **NOTE:更多关于nginx命令的信息，请阅读[官方文档](http://nginx.org/en/docs/control.html)**

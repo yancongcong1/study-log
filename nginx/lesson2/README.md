@@ -88,6 +88,7 @@ linux安装nginx也分好多中不同的方法，这边介绍的是通过源码�
 >   设置工作流用户组的名称，会在外部访问nginx资源时使用，可以在nginx.conf配置文件中进行修改，默认为nobody。
 >
 > - --with-select_module
+> 
 >   --without-select_module
 >
 >   启用或者禁用构建动态模块。如果平台不支持该模块，将会自动禁用构建。
