@@ -6,31 +6,29 @@
 ### 工具
 > - #### [svn](https://github.com/yancongcong1/study-log/tree/master/svn)
 > - #### [git](https://github.com/yancongcong1/study-log/tree/master/git)
+> - #### [maven](https://github.com/yancongcong1/study-log/tree/master/maven)
+> - #### [gradle](https://github.com/yancongcong1/study-log/tree/master/gradle)
+---
 
 ### 前端
 > - #### [webpack](https://github.com/yancongcong1/study-log/tree/master/webpack)
-
 ---
 
 ### 后端
-> - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
 > - #### [spring](https://github.com/yancongcong1/study-log/tree/master/spring)
 > - #### [设计模式](https://github.com/yancongcong1/study-log/tree/master/design-model)
-> - #### [maven](https://github.com/yancongcong1/study-log/tree/master/maven)
-> - #### [gradle](https://github.com/yancongcong1/study-log/tree/master/gradle)
-
 ---
 
-### 分布式
+### 高并发、分布式
 > - #### [zookeeper](https://github.com/yancongcong1/study-log/tree/master/zookeeper)
+> - #### [nginx](https://github.com/yancongcong1/study-log/tree/master/nginx)
 ---
 
 ### 数据库
-> - #### [非关系型数据库：redis](https://github.com/yancongcong1/study-log/tree/master/redis)
-
+> - #### [redis](https://github.com/yancongcong1/study-log/tree/master/redis)
 ---
 
 ### 运维
 > - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
 > - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
-> - #### [nginx](https://github.com/yancongcong1/study-log/tree/master/nginx)
+> - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
