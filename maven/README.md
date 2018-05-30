@@ -28,3 +28,7 @@
 ### - [仓库](https://maven.apache.org/guides/introduction/introduction-to-repositories.html)
 ### - [介不同packing类型的默认生命周期](https://maven.apache.org/ref/3.5.3/maven-core/default-bindings.html)
 ### - [插件列表](https://maven.apache.org/plugins/)
+
+
+
+### -[maven提高篇(转载)](http://www.cnblogs.com/davenkin/tag/maven/)
