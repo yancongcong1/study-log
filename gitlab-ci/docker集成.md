@@ -334,4 +334,4 @@ Q：使用docker打包镜像时报错：COPY failed: Forbidden path outside the 
 
 2、文件结构如下：![](https://gitlab.com/yancongcong1/CICD-Test/uploads/35ba86562c5b33bf2cbd098acf269e7e/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png)
 
-A：[解决办法](https://howtovault.com/posts/how-to-fix-copy-failed-forbidden-path-outside-the-build-context-in-docker/)
+A：[解决办法(转载)](https://howtovault.com/posts/how-to-fix-copy-failed-forbidden-path-outside-the-build-context-in-docker/)
