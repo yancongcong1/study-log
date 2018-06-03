@@ -5,6 +5,8 @@
 # nginx作为http服务器
 
 nginx可以作为各种服务器使用，本节简单介绍一下nginx如何作为http服务器使用。
+nginx作为http服务器的功能需要添加[ngx_http_core_module](http://nginx.org/en/docs/http/ngx_http_core_module.html)模块。
+
 
 
 
