@@ -5,3 +5,5 @@
 ### - [lesson3 nginx命令](https://github.com/yancongcong1/study-log/tree/master/nginx/命令介绍.md)
 ### - [lesson4 nginx.conf配置详解](https://github.com/yancongcong1/study-log/tree/master/nginx/配置详解.md)
 ### - [lesson5 nginx作为http服务器](https://github.com/yancongcong1/study-log/tree/master/nginx/http服务器.md)
+### - [lesson5 nginx作为反向代理服务器](https://github.com/yancongcong1/study-log/tree/master/nginx/反向代理服务器.md)
+### - [lesson5 nginx作负载均衡](https://github.com/yancongcong1/study-log/tree/master/nginx/负载均衡.md)

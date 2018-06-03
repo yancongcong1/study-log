@@ -6,7 +6,39 @@
 
 nginx可以作为各种服务器使用，本节简单介绍一下nginx如何作为http服务器使用。
 
-这需要修改配置文件：
+
+
+## nginx如何分配请求
+
+通常情况下，配置文件中可能包含被listen和server_name区分的几个server块。一旦nginx决定了由那个server处理请求，它就会将请求头中的url和server块中的location进行匹配了，从而返回相应的资源。
+
+当接收到一个请求时，nginx首先匹配server块中的listen配置，如果是匹配成功；那么nginx会将server_name和请求头中的Host信息进行匹配，如果匹配成功，则使用该服务处理请求，否则使用该IP和端口的默认服务处理请求。
+
+不同的IP和端口可以有不同的default_server。
+
+```
+server {
+    listen      192.168.1.1:80;
+    server_name example.org www.example.org;
+    ...
+}
+
+server {
+    listen      192.168.1.1:80 default_server;
+    server_name example.net www.example.net;
+    ...
+}
+
+server {
+    listen      192.168.1.2:80 default_server;
+    server_name example.com www.example.com;
+    ...
+}
+```
+
+
+
+## 完整配置文件
 
 ```
 http {
@@ -46,7 +78,7 @@ http服务需要我们添加http上下文，其中的server上下文提供处理
 
 - **server上下文**
 
-> - *listen*——配置基于IP的虚拟服务。可以配置为IP的地址和端口、端口、以及unix主机的套接字(支持正则表达式)。虚拟服务只接受与配置匹配的请求。
+> - *listen*——服务器的IP和端口，可以配置基于IP的虚拟服务。可以配置为**(IP的地址和端口)**|**(端口)**|**(unix主机的套接字(支持正则表达式))**。虚拟服务只接受与配置匹配的请求。
 >
 >   ```
 >   listen 127.0.0.1:8000;
@@ -71,6 +103,54 @@ http服务需要我们添加http上下文，其中的server上下文提供处理
 >
 >   详细信息请参考：[官方文档](http://nginx.org/en/docs/http/ngx_http_core_module.html#listen)
 >
+> - *server_name*——匹配请求的请求头Host部分，是服务器的名称(域名)或者IP地址。可以是精确的名称、通配符或者正则表达式。
+>
+>   如果多个server_name被匹配，那么nginx会按照下面的规则来选择：
+>
+>   1. 精确名称；
+>   2. 以`*`开头的最长通配符名称；
+>   3. 以`*`结尾的最长通配符名称；
+>   4. 第一个匹配到的正则表达式。
+>
+>   关于server_name各种形式的详细信息请参考[文档](http://nginx.org/en/docs/http/server_names.html)。
+>
+>   ```
+>   server {
+>       listen       80;
+>       server_name  example.org  www.example.org;
+>       ...
+>   }
+>   
+>   server {
+>       listen       80;
+>       server_name  *.example.org;
+>       ...
+>   }
+>   
+>   server {
+>       listen       80;
+>       server_name  mail.*;
+>       ...
+>   }
+>   
+>   server {
+>       listen       80;
+>       server_name  ~^(?<user>.+)\.example\.net$;
+>       ...
+>   }
+>   ```
+>
+> - *root*——配置请求的根目录，可以在`http`, `server`, `location` 中，对同级别的所有请求生效。
+>
+>   ```
+>   location /i/ {
+>       root /data/w3;
+>   }
+>   对于/i/a.jpg和/i/test/b.jpg来说，它们的根目录都是/data/w3。
+>   ```
+>
+>   值可以包含变量，除了`$document_root` 和 `$realpath_root`。 
+>
 > - *location*——设置请求uri的匹配规则。nginx首先对uri进行解码(%XX之类)，然后会解析相对路径./和../。以及将多个相邻的/压缩。
 >
 >   匹配规则可以是`前缀字符串`或者`正则表达式`。正则表达式由前缀修饰符`~*`和`~`来表示。
@@ -85,6 +165,7 @@ http服务需要我们添加http上下文，其中的server上下文提供处理
 >   1. 如果带^~修饰符的前缀字符串已经被匹配，那么正则表达式就不会被匹配了；
 >   2. 修饰符=可以进行精确匹配，如果匹配成功的话，匹配将会被终止。
 >   这样做可以加速匹配速度。(在0.7.1 至 0.8.41之间，如果没有添加=或者^~，如果前缀字符串成功匹配的话，正则表达式也不会进行匹配了)
+>   ^~和=一般用来修饰前缀字符串
 >   ```
 >
 >   eg:
@@ -119,6 +200,6 @@ http服务需要我们添加http上下文，其中的server上下文提供处理
 >
 >   详细信息请参考：[官方文档](http://nginx.org/en/docs/http/ngx_http_core_module.html#location)
 >
-> - *server_name*——
->
-> - *root*——
+>   
+
+还有许多其他的指令，本节只是介绍重要的指令，[官方文档](http://nginx.org/en/docs/http/ngx_http_core_module.html)。
