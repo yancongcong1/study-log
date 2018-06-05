@@ -1,8 +1,6 @@
+------
 
-$$
-WizardYcc's  Blog
-$$
-
+#### WizardYcc's  Blog
 
 ---
 
