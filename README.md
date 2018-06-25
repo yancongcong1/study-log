@@ -23,6 +23,7 @@
 > - #### [spring](https://github.com/yancongcong1/study-log/tree/master/spring)
 > - #### [设计模式](https://github.com/yancongcong1/study-log/tree/master/design-model)
 > - #### [groovy](https://github.com/yancongcong1/study-log/tree/master/groovy)
+> - #### [android](https://github.com/yancongcong1/study-log/tree/master/android)
 ---
 
 ### 高并发、分布式
@@ -39,5 +40,5 @@
 > - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
 > - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
 
-### 精彩博客
+### 精彩文章
 > - #### [王垠的博客主页](http://www.yinwang.org/)
