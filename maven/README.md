@@ -32,3 +32,6 @@
 
 
 ### -[maven提高篇(转载)](http://www.cnblogs.com/davenkin/tag/maven/)
+### -[maven教程](https://www.yiibai.com/maven/)
+### -[CodeTab Apache Maven Tutorial](http://www.codetab.org/apache-maven-tutorial/)
+### -[Maven Compiler Plugin插件源码](https://github.com/apache/maven-compiler-plugin)
