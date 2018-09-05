@@ -1,5 +1,6 @@
-package com.ycc.framework;
+package com.ycc.framework.mvc;
 
+import com.ycc.framework.InitializeLoader;
 import com.ycc.framework.ioc.bean.BeanHelper;
 import com.ycc.framework.ioc.bean.ReflectionUtil;
 import com.ycc.framework.ioc.configure.ConfigHelper;
@@ -26,18 +27,24 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * The control dispatcher servlet.
+ * MVC框架的核心控制器
  *
  * created by ycc at 2018\4\24 0024
  */
 @WebServlet(urlPatterns = "/*", loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {
 
+    /**
+     * 初始化整个框架
+     */
     @Override
     public void init(ServletConfig config) throws ServletException {
         InitializeLoader.init();
     }
 
+    /**
+     * web请求处理
+     */
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String reqMethod = req.getMethod().toLowerCase();

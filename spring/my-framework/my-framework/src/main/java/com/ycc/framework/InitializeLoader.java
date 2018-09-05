@@ -1,5 +1,6 @@
 package com.ycc.framework;
 
+import com.ycc.framework.aop.aop.AopHelper;
 import com.ycc.framework.ioc.bean.BeanHelper;
 import com.ycc.framework.mvc.controller.ControllerHelper;
 import com.ycc.framework.ioc.ioc.IocHelper;
@@ -16,12 +17,13 @@ public class InitializeLoader {
         Class<?>[] classes = {
                 ClassHelper.class,
                 BeanHelper.class,
+                AopHelper.class,
                 IocHelper.class,
                 ControllerHelper.class
         };
 
         for (Class<?> clazz : classes) {
-            ClassUtil.loadClass(clazz.getName());
+            ClassUtil.loadClass(clazz.getName(), true);
         }
     }
 }

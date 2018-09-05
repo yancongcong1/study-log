@@ -4,6 +4,7 @@ import com.ycc.framework.mvc.annotation.Controller;
 import com.ycc.framework.mvc.annotation.Service;
 import com.ycc.framework.ioc.configure.ConfigHelper;
 
+import java.lang.annotation.Annotation;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,6 +52,36 @@ public class ClassHelper {
         Set<Class<?>> classes = new HashSet<Class<?>>();
         classes.addAll(getControllerClassSet());
         classes.addAll(getServiceClassSet());
+        return classes;
+    }
+
+    /**
+     * 根据父类(或接口)来查找bean
+     * @param superClass
+     * @return
+     */
+    public static Set<Class<?>> getClassSetBySuper(Class<?> superClass) {
+        Set<Class<?>> classes = new HashSet<Class<?>>();
+        for (Class<?> clazz : CLASS_SET) {
+            if (superClass.isAssignableFrom(clazz) && !superClass.equals(clazz)) {
+                classes.add(clazz);
+            }
+        }
+        return classes;
+    }
+
+    /**
+     * 根据注解来查找bean
+     * @param annotation
+     * @return
+     */
+    public static Set<Class<?>> getClassSetByAnnotation(Class<? extends Annotation> annotation) {
+        Set<Class<?>> classes = new HashSet<Class<?>>();
+        for (Class<?> clazz : CLASS_SET) {
+            if (clazz.isAnnotationPresent(annotation)) {
+                classes.add(clazz);
+            }
+        }
         return classes;
     }
 

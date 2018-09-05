@@ -26,6 +26,9 @@ public final class BeanHelper {
         return BEAN_SET;
     }
 
+    public static void setBean(Class<?> clazz, Object bean) {
+        BEAN_SET.put(clazz, bean);
+    }
     public static <T> T getBean(Class<T> clazz) {
         if (!BEAN_SET.containsKey(clazz)) {
             throw new RuntimeException("bean set not contain this clazz" + clazz.getName());

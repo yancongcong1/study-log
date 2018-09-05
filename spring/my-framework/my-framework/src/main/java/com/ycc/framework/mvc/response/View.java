@@ -17,7 +17,7 @@ public class View {
 
     public View(String path) {
         this.path = path;
-        this.data = new HashMap<String, Object>();
+        this.data = new HashMap<>();
     }
 
     public View(String path, Map<String, Object> data) {

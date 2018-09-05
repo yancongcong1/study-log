@@ -8,7 +8,7 @@ import com.ycc.framework.mvc.response.Data;
 import com.ycc.framework.mvc.response.View;
 
 /**
- * This controller isn't the member of the framework,it was built for test.
+ * MVC测试用例
  *
  * created by ycc at 2018\4\24 0024
  */

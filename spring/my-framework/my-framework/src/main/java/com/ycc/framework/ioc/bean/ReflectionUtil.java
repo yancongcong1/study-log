@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Get the way to the class by reflect.
+ * 反射工具类
  *
  * created by ycc at 2018\4\24 0024
  */
@@ -19,6 +19,11 @@ public final class ReflectionUtil {
 
     private static Logger logger = Logger.getLogger(ReflectionUtil.class);
 
+    /**
+     * 获取类的实例
+     * @param clazz
+     * @return
+     */
     public static Object getInstance(Class<?> clazz) {
         Object object;
         try {
@@ -33,6 +38,13 @@ public final class ReflectionUtil {
         return object;
     }
 
+    /**
+     * 调用对象的方法
+     * @param object
+     * @param method
+     * @param paramMap
+     * @return
+     */
     public static Object invokeMethod(Object object, Method method, Map<String, Object> paramMap) {
         Object result;
         try {
@@ -55,6 +67,12 @@ public final class ReflectionUtil {
         return result;
     }
 
+    /**
+     * 设置对象的属性
+     * @param object
+     * @param field
+     * @param value
+     */
     public static void setField(Object object, Field field, Object value) {
         try {
             field.setAccessible(true);
