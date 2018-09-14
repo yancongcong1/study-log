@@ -45,7 +45,7 @@ public class AopHelper {
     }
 
     /**
-     * 获取代理类和目标集合类的映射关系
+     * 获取代理类和目标集合类的映射关系(代理类必须带有@Aspect注解并且继承AspectProxy)
      * @return
      * @throws Throwable
      */

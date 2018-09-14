@@ -31,7 +31,7 @@ import java.util.Set;
  *
  * created by ycc at 2018\4\24 0024
  */
-@WebServlet(urlPatterns = "/*", loadOnStartup = 0)
+@WebServlet(urlPatterns = {"/*"}, loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {
 
     /**

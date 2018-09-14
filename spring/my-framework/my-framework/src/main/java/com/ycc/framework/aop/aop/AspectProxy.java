@@ -27,6 +27,7 @@ public class AspectProxy implements Proxy {
                 result = proxyChain.doProxyChain();
             }
         } catch (Exception e) {
+            exception();
             throw e;
         } finally {
             end();
@@ -35,6 +36,8 @@ public class AspectProxy implements Proxy {
     }
 
     public void begin() {}
+
+    public void exception() {}
 
     public void end() {}
 
