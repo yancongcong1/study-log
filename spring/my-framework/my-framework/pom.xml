@@ -117,12 +117,12 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <webappDirectory>/webapps</webappDirectory>
-                    <!--<webResources>
+                    <!--<webappDirectory>/webapps</webappDirectory>-->
+                    <webResources>
                         <resource>
                             <directory>/webapps</directory>
                         </resource>
-                    </webResources>-->
+                    </webResources>
                 </configuration>
             </plugin>
         </plugins>

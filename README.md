@@ -40,6 +40,7 @@
 > - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
 > - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
 > - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
+> - #### [日志记录](https://github.com/yancongcong1/study-log/tree/master/log)
 
 ### 精彩文章
 > - #### [王垠的博客主页](http://www.yinwang.org/)
