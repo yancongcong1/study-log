@@ -17,6 +17,7 @@
 > - #### [react](https://github.com/yancongcong1/study-log/tree/master/react)
 > - #### [vue](https://github.com/yancongcong1/study-log/tree/master/vue)
 > - #### [UI框架](https://github.com/yancongcong1/study-log/tree/master/ui)
+> - #### [碰到的一些问题](https://github.com/yancongcong1/study-log/tree/master/front-end-problems)
 ---
 
 ### 后端
@@ -25,6 +26,7 @@
 > - #### [groovy](https://github.com/yancongcong1/study-log/tree/master/groovy)
 > - #### [android](https://github.com/yancongcong1/study-log/tree/master/android)
 > - #### [io/socket编程](https://github.com/yancongcong1/study-log/tree/master/socket)
+> - #### [shiro](https://github.com/yancongcong1/study-log/tree/master/shiro)
 ---
 
 ### 高并发、分布式
