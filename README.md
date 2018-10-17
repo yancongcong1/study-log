@@ -43,6 +43,9 @@
 > - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
 > - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
 > - #### [日志记录](https://github.com/yancongcong1/study-log/tree/master/log)
+---
 
 ### 精彩文章
 > - #### [王垠的博客主页](http://www.yinwang.org/)
+> - #### [究竟什么是技术——非科班程序员两年的内心挣扎(看评论区解惑啦!)](https://www.cnblogs.com/flashsun/p/9266343.html)
+---
