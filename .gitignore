@@ -4,4 +4,4 @@
 .idea
 *.iml
 
-*\target\
+**\target\*
