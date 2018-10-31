@@ -40,13 +40,16 @@
 ---
 
 ### 运维
+> - #### [linux](https://github.com/yancongcong1/study-log/tree/master/linux)
 > - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
 > - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
 > - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
 > - #### [日志记录](https://github.com/yancongcong1/study-log/tree/master/log)
+> - #### [正则表达式](https://github.com/yancongcong1/study-log/tree/master/regex)
 ---
 
 ### 精彩文章
 > - #### [王垠的博客主页](http://www.yinwang.org/)
-> - #### [究竟什么是技术——非科班程序员两年的内心挣扎(看评论区解惑啦!)](https://www.cnblogs.com/flashsun/p/9266343.html)
+> - #### [究竟什么是技术——非科班程序员两年的内心挣扎](https://www.cnblogs.com/flashsun/p/9266343.html)
+> - #### [一个10年IT技术人的历程-Java架构师的演变](https://blog.csdn.net/skyline813/article/details/54924931)
 ---
