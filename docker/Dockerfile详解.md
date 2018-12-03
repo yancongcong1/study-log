@@ -136,7 +136,7 @@ FROM <image>[@<digest>] [AS <name>]
 
 - `ARG`指令是唯一可以出现在`FROM`指令之前的一个指令。
 
-- `FROM`指令可以在Dockerfile文件中出现多次，用来创建多个镜像或者将一个构建阶段作为另一个的依赖(只需要记录上次构建时的commit输出的最后一个镜像ID)。每一个`FROM`执行前都会清楚之前指令创建的任何状态。
+- `FROM`指令可以在Dockerfile文件中出现多次，用来创建多个镜像或者将一个构建阶段作为另一个的依赖(只需要记录上次构建时的commit输出的最后一个镜像ID)。每一个`FROM`执行前都会清除之前指令创建的任何状态。
 
 - (可选)可以通过给`FROM`指令添加`As name`来给构建的镜像提供一个名称，该名称可以用于后续的`FROM`和`COPY --from=<name|index>`指令。
 
@@ -306,7 +306,7 @@ ENV myCat fluffy
 WORKDIR /path/to/workdir
 ```
 
-​	`WORKDIR`指令用来给位于其后的指令(`RUN CMD ENTRYPOINT COPY ADD`)设置工作目录，如果没有设置该指令，则默认工作目录为根目录`/`。
+​	`WORKDIR`指令用来给位于其后的指令(`RUN CMD ENTRYPOINT COPY ADD`)设置工作目录(镜像层中的目录)，如果没有设置该指令，则默认工作目录为根目录`/`。
 
 ​	`WORKDIR`指令可以在Dockerfile文件中出现多次，如果设置的值是相对路径，那么它相对于之前的`WORKDIR`来设置的。例如：
 
@@ -374,7 +374,7 @@ RUN ["executable", "param1", "param2"] (exec格式)
   RUN /bin/bash -c 'source $HOME/.bashrc; echo $HOME'
   ```
 
-  RUN`指令的缓存会在下一次构建中被重用。例如`RUN apt-get dist-upgrade -y`，可以通过在`build`命令添加`--no-cache`标记来禁用缓存。
+  `RUN`指令的缓存会在下一次构建中被重用。例如`RUN apt-get dist-upgrade -y`，可以通过在`build`命令添加`--no-cache`标记来禁用缓存。
 
 
 
@@ -736,7 +736,7 @@ VOLUME /data1 /data2
 >
 > [Dockerfile指令详解 && VOLUME 指令(转载)](https://www.cnblogs.com/reachos/p/8621748.html)
 >
-> [[docker学习笔记18：Dockerfile 指令 VOLUME 介绍](转载)](https://www.cnblogs.com/51kata/p/5266626.html)
+> [docker学习笔记18：Dockerfile 指令 VOLUME 介绍(转载)](https://www.cnblogs.com/51kata/p/5266626.html)
 
 
 

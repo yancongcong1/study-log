@@ -11,3 +11,4 @@
 
 # 问题记录
 ### - [nginx配置代理后无法正确访问首页(index指令)](https://github.com/yancongcong1/study-log/tree/master/nginx/problem/index指令.md)
+### - [跨域问题](https://github.com/yancongcong1/study-log/tree/master/nginx/problem/跨域.md)
