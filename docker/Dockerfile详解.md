@@ -498,6 +498,8 @@ ENTRYPOINT command param1 param2 (shell格式)
   | **CMD exec_cmd p1_cmd**        | /bin/sh -c exec_cmd p1_cmd | /bin/sh -c exec_entry p1_entry | exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd |
 
 > FBI高能预警：很好，现在我们已经彻底的被`RUN`、`CMD`、`ENTRYPOINT`这三个指令完全弄懵逼了！那么这三个家伙之间到底有什么区别呢？？？`RUN`指令在镜像层中运行命令并且将结果提交给下一个指令使用，一般用来给镜像中安装一些软件，它在镜像的构建阶段生效；`CMD`和`ENTRYPOINT`指令在构建阶段不起作用，只有在容器启动时才会生效。`CMD`指令可以设置容器启动时的**默认**执行命令，但是可以被`docker run`命令中的命令或者参数取代；`ENTRYPOINT`指令用来设置容器启动时的执行命令，参数不能被`docker run`命令后的参数替换，但是`ENTRYPOINT`指令可以通过`docker run --entrypoint`来被替换。
+>
+> **注意：CMD指令为ENTRYPOINT指令提供默认参数是基于镜像层次结构生效的，而不是基于是否在同个Dockerfile文件中。意思就是说，如果Dockerfile指定基础镜像中是ENTRYPOINT指定的启动命令，则该Dockerfile中的CMD依然是为基础镜像中的ENTRYPOINT设置默认参数。**
 
 
 

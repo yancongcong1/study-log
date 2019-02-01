@@ -43,7 +43,7 @@
 ### 运维
 > - #### [linux](https://github.com/yancongcong1/study-log/tree/master/linux)
 > - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
-> - #### [kubernetes](https://github.com/yancongcong1/study-log/tree/master/kubernetes)
+> - #### [kubernetes-ocp-helm](https://github.com/yancongcong1/study-log/tree/master/k8s-ocp-helm)
 > - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
 > - #### [日志记录](https://github.com/yancongcong1/study-log/tree/master/log)
 > - #### [正则表达式](https://github.com/yancongcong1/study-log/tree/master/regex)

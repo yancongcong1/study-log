@@ -16,6 +16,10 @@
 
 在此之前需要确认机器是否开启了虚拟化：[机器如何开启虚拟化](http://jingyan.baidu.com/article/335530daa55d7e19cb41c3c2.html)
 
+本人机器：windows7 64位
+
+Docker工具：Docker Toolbox
+
 1. 创建虚拟机
 
    当安装好后，我们可以直接通过docker-machine命令来创建虚拟机。这边有许多值得注意的点，我们会一一道来。我们先看一下安装虚拟机的命令：
@@ -66,7 +70,7 @@
    >
    > 会看到以下图片：
    >
-   > ![docker-machine-connect](https://github.com/yancongcong1/study-log/tree/master/docker/static/images/docker.png)
+   > ![docker-machine-connect](https://github.com/yancongcong1/study-log/tree/master/docker/static/images/docker-machine-connect.png)
    >
    > 可以看到当前有两台虚拟机，**active属性下面为*表示和当前终端建立了连接**。这时候可以试一下docker ps命令是否可以正常执行了。
 
@@ -103,13 +107,13 @@
 
 3. 添加私人仓库
 
-   一般情况下，公司都会有自己的私人仓库，如果我们想要，连接我们自己的仓库就需要进行相关的配置。该配置也有两种方法，同上：
+   一般情况下，公司都会有自己的私人仓库，如果我们想要连接我们自己的仓库就需要进行相关的配置。该配置也有两种方法，同上：
 
    - 修改配置文件
 
      ```
      # 编辑/var/lib/boot2docker/profile文件
-     # 在下面EXTRA_ARGS中添加--engine-insecure-registry=https://registry.it.test.com(你自己的仓库地址)
+     # 在下面EXTRA_ARGS中添加--insecure-registry=https://registry.it.test.com(你自己的仓库地址)
      ```
 
      最后重新启动虚拟机：`docker-machine restart default`或者重新启动docker服务`sudo /etc/init.d/docker restart`
@@ -117,7 +121,7 @@
    - 创建虚拟机时指定参数
 
      ```
-     docker-machine create --engine-registry-mirror=https://xxxxxxx.mirror.aliyuncs.com --engine-insecure-registry=https://registry.it.test.com -d virtualbox default
+     docker-machine create --engine-insecure-registry=https://registry.it.test.com -d virtualbox default
      ```
 
    一般情况下到此我们的配置就完成了，但是有一些公司设置了内网外网访问权限，所以如果在这种情况下还需要配置代理。
@@ -141,7 +145,7 @@
    - 创建虚拟机时指定参数
 
      ```
-     docker-machine create --engine-registry-mirror=https://xxxxxxx.mirror.aliyuncs.com --engine-insecure-registry=https://registry.it.test.com --engine-env HTTP_PROXY=ip:port --engine-env HTTPS_PROXY=ip:port --engine-env NO_PROXY=ip:port -d virtualbox default
+     docker-machine create --engine-env HTTP_PROXY=ip:port --engine-env HTTPS_PROXY=ip:port --engine-env NO_PROXY=ip:port -d virtualbox default
      ```
 
      NO_PROXY表示不想走代理服务的访问地址。
@@ -178,12 +182,12 @@
 
 ```
 docker-machine create 
-	-d vrtualbox
-	--virtualbox-boot2docker-url=boot2docker.iso #注意使用该命令的时候当前目录需要为iso文件目录
+	-d virtualbox
+	--virtualbox-boot2docker-url=boot2docker.iso
 	--engine-insecure-registry=https://registry.it.test.com
 	--engine-registry-mirror=https://xxxxxx.mirror.aliyuncs.com
-	--engine-env HTTP_PROXY=10.136.130.53:808
-	--engine-env HTTPS_PROXY=10.136.130.53:808
+	--engine-env HTTP_PROXY=ip:port
+	--engine-env HTTPS_PROXY=ip:port
 	--engine-env NO_PROXY=xxxxxx.mirror.aliyuncs.com
 ```
 
