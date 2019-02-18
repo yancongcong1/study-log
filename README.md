@@ -55,4 +55,5 @@
 > - #### [一个10年IT技术人的历程-Java架构师的演变](https://blog.csdn.net/skyline813/article/details/54924931)
 > - #### [阿里高级技术专家：如何量化考核技术人的KPI？](http://news.51cto.com/art/201810/584531.htm)
 > - #### [黎活明给程序员的忠告](https://blog.csdn.net/onezg/article/details/53159162)
+> - #### [阿里巴巴高级技术专家至简：聊工程师思维](https://yq.aliyun.com/articles/651552)
 ---
