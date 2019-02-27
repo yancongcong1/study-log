@@ -41,6 +41,8 @@
 - [storageos](https://kubernetes.io/docs/concepts/storage/volumes/#storageos)
 - [vsphereVolume](https://kubernetes.io/docs/concepts/storage/volumes/#vspherevolume)
 
+> 注意：直接在Pod中挂载Volume的方式成为静态绑定，在这种情况下Volume生命周期与Pod相同。
+
 
 
 ## PersistentVolume系统
@@ -55,11 +57,25 @@ PersistentVolumeClaim(PVC)是用户对存储请求细节的定义，也就是用
 
 对于不同的场景，用户通常需要具有不同属性的Volume。管理员需要提供不同存储空间和访问模式的各种Volume并且无需让用户了解其实现细节，这时候可以使用Kubernetes中的StorageClasses资源来解决该问题。
 
+关于PVC的详细语法请参考[文档](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)。
+
 
 
 ### PersistentVolume
 
 PersistentVolume(PV)是集群中由管理员提供的一个存储实现。PV是一种卷插件，用来定义存储的实现细节。其定义的存储可以是NFS、ISCSI，也可以是特定于指定云提供的存储系统。
+
+PersistentVolume(PV)用来静态创建PV资源，创建后的PV资源不可修改。
+
+关于PV的详细语法请参考[文档](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes)。
+
+
+
+### StorageClass
+
+StorageClass用来创建动态PV资源，也就是说如果使用StorageClass定义存储资源时，PVC在绑定PV时会根据需要自动创建所需的PV资源，当然该PV资源类型是基于指定的底层存储的(例如AWS EBS，Azure磁盘或者Cinder卷)。
+
+关于StorageClass的详细语法请参考[文档](https://kubernetes.io/docs/concepts/storage/storage-classes/#the-storageclass-resource)。
 
 
 
@@ -81,15 +97,64 @@ PV可以通过两种方式来进行提供：statically 和 dynamically.
 
 #### Binding(绑定)
 
+假设用户已经创建了一个动态供应的PV和一个指定容量和请求的PVC，那么master节点的控制器会不断的检测是否有符合PVC请求的PV被提供，如果有就会将他们绑定在一起；如果没有匹配到符合要求的卷，PVC会一直保持未绑定状态。
+
+如果PV是动态提供的，控制器会直接将PVC和它绑定，否则会将与PVC最小请求匹配的PV进行绑定。一旦绑定成功后，PV将会被PVC独占使用，它们之间是一对一的关系。
+
+#### Using(使用)
+
+集群通过检查Claim来找到绑定卷并将之挂载到Pod，对于支持多种访问模式的卷，用户在Pod中指明所用的模式。详细语法请参照[文档](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#claims-as-volumes)。
+
+#### Reclaiming(回收)
+
+当用户处理完Volume后，他们可以从允许回收资源的API中删除PVC对象。PV对象的回收政策告诉集群当Volume被PVC释放后应该被如何处理。目前Volume支持三种回收策略：`Retained`，`Recycled`和`Deleted`。
+
+##### Retain
+
+Retain回收策略允许手动回收资源。当PVC被删除后，PV处于`released`状态，此时PV仍然不能被灵位的PVC绑定因为之前的PVC数据仍然保留在volume上。管理员可以通过以下步骤手动回收volume：
+
+1. 删除PV资源。在删除PV后，外部设备中的相关存储资源仍然存在(例如AWS EBS，Azure磁盘或者Cinder卷)。
+2. 手动清除相关储存资源上的数据。
+3. 手动删除存储资源，如果你想要再次使用该存储资源，可以为该存储资源重新定义一个PV。
+
+##### Delete
+
+Delete回收策略会同时删除PV资源以及外部设施中的储存资源(例如AWS EBS，Azure磁盘或者Cinder卷)。动态提供的Volume会继承StorageClass资源的默认策略Delete，管理员应该根据实际情况配置StorageClass的回收策略。
+
+##### Recycle
+
+Recycle回收策略会先对卷执行一个基本的删除工作(rm -rf /thevolume/*)，然后将其用于新的PVC。
+
+管理员可以通过修改容器启动的命令参数来自定义回收Volume的方式，例如：
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pv-recycler
+  namespace: default
+spec:
+  restartPolicy: Never
+  volumes:
+  - name: vol
+    hostPath:
+      path: /any/path/it/will/be/replaced
+  containers:
+  - name: pv-recycler
+    image: "k8s.gcr.io/busybox"
+    command: ["/bin/sh", "-c", "test -e /scrub && rm -rf /scrub/..?* /scrub/.[!.]* /scrub/*  && test -z \"$(ls -A /scrub)\" || exit 1"]
+    volumeMounts:
+    - name: vol
+      mountPath: /scrub
+```
 
 
 
+### PV的状态
 
+基于PV的声明周期，PV拥有以下几种状态：
 
-
-
-
-
-
-
-
+- Available：PV被创建成功并且未被绑定或者被回收
+- Bound：PV被绑定
+- Released：PV资源被释放(解除绑定状态)
+- Failed：PV资源创建失败

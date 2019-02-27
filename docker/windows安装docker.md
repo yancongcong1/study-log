@@ -49,30 +49,41 @@ Docker工具：Docker Toolbox
    如果你没有其他的需求，至此应该就算完成了，但是当你打开cmd终端或者git-bash输入docker ps时，会报这样的错误：
 
    > error during connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.37/containers/json: open //./pipe/docker_engine: The system cannot find the file specified. In the default daemon configuration on Windows, the docker client must be run elevated to connect. This error may also indicate that the docker daemon is not running.
-   >
-   > 朋友们可能就会很疑惑了，我的docker虚拟机明明都启动了啊，为什么还是无法连接docker服务，这是因为我们的终端并没有和docker虚拟机建立起连接，所以我们无法使用docker服务。
-   >
-   > 这个地方就会牵扯到第二个问题，那就是不同终端的区别，cmd、git-bash以及windows powershell这三个终端，不同终端连接虚机的命令都不同，具体可以通过docker-machine env命令来查看。
-   >
-   > **通过输入`docker-machine env default`，控制台输入的最后一行就是连接虚机的命令。**
-   >
-   > powershell连接docker虚拟机命令如下：
-   >
-   > ```
-   > docker-machine env default | Invoke-Expression
-   > ```
-   >
-   > 如何判断当前终端是否与虚拟机建立连接，又是连接到哪个虚拟机其实也很方便，通过以下命令即可：
-   >
-   > ```
-   > docker-machine ls
-   > ```
-   >
-   > 会看到以下图片：
-   >
-   > ![docker-machine-connect](https://github.com/yancongcong1/study-log/tree/master/docker/static/images/docker-machine-connect.png)
-   >
-   > 可以看到当前有两台虚拟机，**active属性下面为*表示和当前终端建立了连接**。这时候可以试一下docker ps命令是否可以正常执行了。
+
+   朋友们可能就会很疑惑了，我的docker虚拟机明明都启动了啊，为什么还是无法连接docker服务，这是因为我们的终端并没有和docker虚拟机建立起连接，所以我们无法使用docker服务。
+
+   这个地方就会牵扯到第二个问题，那就是不同终端的区别，`cmd`、`git-bash`以及`windows powershell`这三个终端，不同终端连接虚机的命令都不同，具体可以通过docker-machine env命令来查看。
+
+   **通过输入`docker-machine env default`，控制台输入的最后一行就是连接虚机的命令。**
+
+   powershell连接docker虚拟机命令如下：
+
+   ```
+   docker-machine env default | Invoke-Expression
+   ```
+
+   如何判断当前终端是否与虚拟机建立连接，又是连接到哪个虚拟机其实也很方便，通过以下命令即可：
+
+   ```
+   docker-machine ls
+   ```
+
+   会看到以下图片：
+
+   ![docker-machine-connect](https://github.com/yancongcong1/study-log/tree/master/docker/static/images/docker-machine-connect.png)
+
+   可以看到当前有两台虚拟机，**active属性下面为*表示和当前终端建立了连接**。这时候可以试一下docker ps命令是否可以正常执行了。
+
+   在主机终端访问docker大多数情况都是因为工作需要获取本地某个目录的上下文，如果主机终端可以直接访问docker服务，那么就可以很方便的切换工作空间。如果此时根据以上步骤进行了配置但是主机扔无法访问docker服务又该怎么做呢(可能错误如下所示，暂未找到解决方法，错误大多跟此有关)？
+
+   ```
+   error during connect: Get https://192.168.99.100:2376/v1.37/containers/json?all=1: unexpected EOF
+   ```
+
+   跟docker类似，virtualbox提供虚拟机挂载目录的功能，此时我们可以将需要的工作目录直接挂载到docker虚拟机中的指定目录，然后通过ssh进入docker虚拟机内部来进行工作，可以使用`docker-machine mount`命令来进行目录的挂载，然后使用`docker-machine ssh`命令进入虚拟机。
+   虚拟机挂载目录的相关信息只能通过VirtualBox应用界面的设置进行查看，`docker-machine inspect`命令查询不到挂载信息：
+
+   ![vituralBox-setting](https://github.com/yancongcong1/study-log/tree/master/docker/static/images/vituralBox-setting.png)
 
 2. 配置镜像加速
 
@@ -189,6 +200,7 @@ docker-machine create
 	--engine-env HTTP_PROXY=ip:port
 	--engine-env HTTPS_PROXY=ip:port
 	--engine-env NO_PROXY=xxxxxx.mirror.aliyuncs.com
+	default
 ```
 
 完整配置：
