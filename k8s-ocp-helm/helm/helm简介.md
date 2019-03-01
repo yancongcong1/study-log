@@ -41,9 +41,16 @@ Helm在Kubernets集群中安装charts，每次安装后都会创建一个对应�
   - [Scoop](https://scoop.sh/) --- `scoop install helm`.
   - [GoFish](https://gofi.sh/) --- `gofish install helm`.
 
-> 这边可能有点疑问：难道我们下载的这个二进制包不就是Helm客户端吗？的确，这样说也没有问题，`init`命令主要会帮我们做一些Helm本地的一些配置。运行`init`命令后可以在HELM_HOME下面看到.helm文件，这里面包含着我们的一些配置文件。
+> 这边可能有点疑问：难道我们下载的这个二进制包不就是Helm客户端吗？这样说的确也没有问题，`init`命令主要作用是帮我们做一些Helm本地的配置。运行`init`命令后可以在HELM_HOME下面看到.helm文件，这里面包含着我们的一些配置文件。
 >
 > 你可能会发现，我们不运行init来设置本地配置依然可以执行部分helm命令(前提是之前必须在Kubernetes集群中安装好了Tiller服务)例如`install`命令，但是执行一些命令可能报错例如`search`命令。所以为了更加完好的使用helm，使用init命令进行本地的初始化配置必不可少，当然你也可以将配置文件复制到正确的地方，只是这样的做法有些麻烦就是了。
+
+那么`init`命令会将Tiller安装到什么地方呢？这就不得不说一下使用helm的前提条件了：
+
+- 首先你需要一个Kubernetes集群。Helm的许多命令例如`install`和`upgrade`都需要Kubernetes才能正常使用。
+- 你最好在本地有一个`kubectl`客户端来访问Kubernetes服务，当然`oc`客户端也是可以的(关于openshift会在相关文档中另行说明)
+
+当我们使用`init`命令时，Helm会通过查找Kubernetes配置文件(通常在`$HOME/.kube/config`，此文件包含了kubectl客户端访问Kubernetes集群的一些配置信息)，从而确定将Tiller服务安装到哪个集群上面(`kubectl`客户端可以连接多个集群，我们可以通过--kube-context选项将Tiller安装到指定的集群中)。从这个过程中我们可以看到，在使用`init`命令之前，我们需要先登录Kubernetes集群，这样配置文件中才会保留登录令牌以便Helm访问集群时使用。
 
 下面我们主要介绍一下`helm init`命令以及部分主要参数的含义：
 
@@ -63,14 +70,28 @@ Helm在Kubernets集群中安装charts，每次安装后都会创建一个对应�
 | --upgrade         | 更新Tiller服务                                               |
 | --force-upgrade   | 强制将Tiller服务更新到当前的helm版本                         |
 
+### 小结
 
+我们总结一下安装Helm的过程：
 
-##  TILLER, NAMESPACES AND RBAC
+1. 准备好Kubernetes集群，本地安装kubectl客户端或者oc客户端；
+2. 准备好helm二进制包，用来执行`helm init`命令；
+3. 执行登录Kubernetes的命令，保证将登录令牌写入配置文件(登录时自动写入)；
+4. 执行`init`命令来安装Tiller服务或者只是配置本地的Helm，具体参照`init`命令介绍。
+
+###  TILLER AND NAMESPACES
 
 有时你可能会有在一个集群中安装多个Tiller服务的需求，下面是一些在这种场景下的最佳实践：
 
 1. Tiller在任意的namespace中都可以安装。默认情况下会被安装到kube-system中。可以通过指定namespace的方式来在一个集群中运行多个Tiller服务。
-2. 限制Tiller只能安装到指定的namespace是由Kubernetes的[RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)角色和角色绑定机制来控制的。使用helm init命令时，可以通过--service-account选项来指定Tiller的服务账户。
-3. 每个Tiller服务生成的Release名称都是唯一的。
-4. Charts只因该包含存在于单个namespace中的资源。
-5. 不建议使用多个Tiller来共同管理同一个namespace中的资源。
+2. 每个Tiller服务生成的Release名称都是唯一的。
+3. Charts只因该包含存在于单个namespace中的资源。
+4. 不建议使用多个Tiller来共同管理同一个namespace中的资源。
+
+### 安全问题和RBAC
+
+如果你是自己学习或者开发使用，通常使用helm init简单安装就行了；但是如果你想要在生产环境中安装Helm，最好启用一些安全设置，具体请参考[文档](https://helm.sh/docs/using_helm/#securing-your-helm-installation)。
+
+如果你的集群开启了RBAC，你还得做一些关于权限的配置才能正确使用Tiller服务，详情请参考[configure a service account and rules](https://helm.sh/docs/using_helm/#role-based-access-control) 
+
+关于更多关于安装HELM的详细信息请参考[官方文档](https://helm.sh/docs/using_helm/#installing-helm)
