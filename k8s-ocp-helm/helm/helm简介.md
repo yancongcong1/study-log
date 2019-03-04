@@ -22,6 +22,8 @@ Helm(和Tiller)用来管理Kubernetes集群中的包资源，在Helm中主要有
 
   拿MySQL chart举例，如果你想要在一个集群中运行两个数据库，你可以将该chart安装两次，每此安装都会创建一个新的release。
 
+  > 这边简单区分一下release和revision：release类似一个应用，revision类似于应用的版本号。当使用install命令的时候会生成对应的release(指定名称)以及revision(默认为1)。以后release都不会改变，使用install也不能再指定该release名称(除非删除并释放，之后会介绍)，每次使用upgrade命令都会重新部署一个release版本，默认会在最近的基础上加1(也可以手动指定)，但是release不变，变得是revision。
+
 结合上面的三个概念，我们这样来形容Helm：
 
 Helm在Kubernets集群中安装charts，每次安装后都会创建一个对应的release。
