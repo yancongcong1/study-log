@@ -27,6 +27,7 @@ Helm(和Tiller)用来管理Kubernetes集群中的包资源，在Helm中主要有
 结合上面的三个概念，我们这样来形容Helm：
 
 Helm在Kubernets集群中安装charts，每次安装后都会创建一个对应的release。
+Helm中的其他**专业术语**请参考[文档](https://helm.sh/docs/glossary/)。
 
 
 
