@@ -39,9 +39,9 @@ mychart/
 
 ## 模版语法
 
-template相当于Kubernetes中的资源，每一个template对应着一个Kubernetes资源。可以看到，template定义资源语法与Kubernets定义资源语法很相似。
+template文件相当于Kubernetes中的资源，每一个template文件对应着一个Kubernetes资源。可以看到，template其实就是Kubernetes的YAML资源文件。
 
-让我们从一个例子来说明模板语法，假如我们创建了一个文件叫mychart/templates/configmap.yaml：
+让我们从一个例子来说明模板文件的构成，假如我们创建了一个文件叫mychart/templates/configmap.yaml：
 
 ```yaml
 apiVersion: v1
@@ -116,7 +116,9 @@ data:
 
 可以看到Kubernetes的ConfigMap资源的name被赋予了正确的值。
 
-**Helm模板语法就是Kubernetes模板语法以及模板指令的结合(在`{{`和`}}`中定义模板指令)。**在指令`{{ .Release.Name }}`中我们看到Helm模板指令使用`.`来定位作用域(命名空间)。指令中的第一个`.`表示最顶层的作用域，关于这部分我们会在之后的小节中介绍。上面的指令意思为：在最顶层的域中寻找Release(Helm的内置对象之一)对象，然后再Release对象域中寻找Name对象。
+**Helm模板文件就是在Kubernetes的YAML文件和模板语法的结合(在`{{`和`}}`中定义模板指令)**。在指令`{{ .Release.Name }}`中我们看到Helm模板指令使用`.`来定位作用域(命名空间)。
+
+指令中的第一个`.`表示最顶层的作用域，关于这部分我们会在之后的小节中介绍。上面的指令意思为：在最顶层的域中寻找Release(Helm的内置对象之一)对象，然后再Release对象域中寻找Name对象。
 
 ### 命名空间
 

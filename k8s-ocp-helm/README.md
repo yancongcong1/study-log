@@ -22,6 +22,6 @@
 ## Helm
 
 ### [helm简介](https://github.com/yancongcong1/study-log/tree/master/k8s-ocp-helm/helm/helm简介.md)
-### [helm简介](https://github.com/yancongcong1/study-log/tree/master/k8s-ocp-helm/helm/helm命令.md)
+### [helm命令](https://github.com/yancongcong1/study-log/tree/master/k8s-ocp-helm/helm/helm命令.md)
 ### [chart简介](https://github.com/yancongcong1/study-log/tree/master/k8s-ocp-helm/helm/chart简介.md)
 ### [template详解](https://github.com/yancongcong1/study-log/tree/master/k8s-ocp-helm/helm/template详解.md)
