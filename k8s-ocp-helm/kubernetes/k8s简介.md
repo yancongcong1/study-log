@@ -100,3 +100,14 @@ kubernets可以做什么：
 
   > 注意：Annotation不会被Kubernetes直接引用，其主要目的是方便用户阅读查找。
 
+## 对象(Objects)
+
+Kubernetes的一个基本特性就是它的所有的资源其实都是支持CRUD操作的被建模的API对象，这些对象表示了Kubernetes的状态：
+
+- 当前运行的容器应用
+- 这些应用程序的可用资源
+- 这些容器的一些策略，比如重启、升级以及容错
+
+Kubernetes对象包含两个嵌入属性：spec和status。spec为必须字段，表明你希望对象拥有的属性以及最终状态。status由Kubernetes提供和更新，表示当前对象的状态。
+
+通常来讲，我们通过YAML文件来指明对象的spec字段以及其他字段，然后调用API来在Kubernetes集群中创建这些对象(kubectl会将YAML文件转换成JSON格式)。
