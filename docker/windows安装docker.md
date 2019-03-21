@@ -70,7 +70,7 @@ Docker工具：Docker Toolbox
 
    会看到以下图片：
 
-   ![docker-machine-connect](https://github.com/yancongcong1/study-log/tree/master/docker/static/images/docker-machine-connect.png)
+   ![docker-machine-connect](https://github.com/yancongcong1/blog/tree/master/docker/static/images/docker-machine-connect.png)
 
    可以看到当前有两台虚拟机，**active属性下面为*表示和当前终端建立了连接**。这时候可以试一下docker ps命令是否可以正常执行了。
 
@@ -83,7 +83,7 @@ Docker工具：Docker Toolbox
    跟docker类似，virtualbox提供虚拟机挂载目录的功能，此时我们可以将需要的工作目录直接挂载到docker虚拟机中的指定目录，然后通过ssh进入docker虚拟机内部来进行工作，可以使用`docker-machine mount`命令来进行目录的挂载，然后使用`docker-machine ssh`命令进入虚拟机。
    虚拟机挂载目录的相关信息只能通过VirtualBox应用界面的设置进行查看，`docker-machine inspect`命令查询不到挂载信息：
 
-   ![vituralBox-setting](https://github.com/yancongcong1/study-log/tree/master/docker/static/images/vituralBox-setting.png)
+   ![vituralBox-setting](https://github.com/yancongcong1/blog/tree/master/docker/static/images/vituralBox-setting.png)
 
 2. 配置镜像加速
 

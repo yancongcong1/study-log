@@ -5,48 +5,48 @@
 ---
 
 ### 工具
-> - #### [svn](https://github.com/yancongcong1/study-log/tree/master/svn)
-> - #### [git](https://github.com/yancongcong1/study-log/tree/master/git)
-> - #### [maven](https://github.com/yancongcong1/study-log/tree/master/maven)
-> - #### [gradle](https://github.com/yancongcong1/study-log/tree/master/gradle)
+> - #### [svn](https://github.com/yancongcong1/blog/tree/master/svn)
+> - #### [git](https://github.com/yancongcong1/blog/tree/master/git)
+> - #### [maven](https://github.com/yancongcong1/blog/tree/master/maven)
+> - #### [gradle](https://github.com/yancongcong1/blog/tree/master/gradle)
 ---
 
 ### 前端
-> - #### [webpack](https://github.com/yancongcong1/study-log/tree/master/webpack)
-> - #### [node](https://github.com/yancongcong1/study-log/tree/master/node)
-> - #### [react](https://github.com/yancongcong1/study-log/tree/master/react)
-> - #### [vue](https://github.com/yancongcong1/study-log/tree/master/vue)
-> - #### [UI框架](https://github.com/yancongcong1/study-log/tree/master/ui)
-> - #### [碰到的一些问题](https://github.com/yancongcong1/study-log/tree/master/front-end-problems)
+> - #### [webpack](https://github.com/yancongcong1/blog/tree/master/webpack)
+> - #### [node](https://github.com/yancongcong1/blog/tree/master/node)
+> - #### [react](https://github.com/yancongcong1/blog/tree/master/react)
+> - #### [vue](https://github.com/yancongcong1/blog/tree/master/vue)
+> - #### [UI框架](https://github.com/yancongcong1/blog/tree/master/ui)
+> - #### [碰到的一些问题](https://github.com/yancongcong1/blog/tree/master/front-end-problems)
 ---
 
 ### 后端
-> - #### [spring](https://github.com/yancongcong1/study-log/tree/master/spring)
-> - #### [java web](https://github.com/yancongcong1/study-log/tree/master/java-web)
-> - #### [设计模式](https://github.com/yancongcong1/study-log/tree/master/design-model)
-> - #### [groovy](https://github.com/yancongcong1/study-log/tree/master/groovy)
-> - #### [android](https://github.com/yancongcong1/study-log/tree/master/android)
-> - #### [io/socket编程](https://github.com/yancongcong1/study-log/tree/master/socket)
-> - #### [shiro](https://github.com/yancongcong1/study-log/tree/master/shiro)
+> - #### [spring](https://github.com/yancongcong1/blog/tree/master/spring)
+> - #### [java web](https://github.com/yancongcong1/blog/tree/master/java-web)
+> - #### [设计模式](https://github.com/yancongcong1/blog/tree/master/design-model)
+> - #### [groovy](https://github.com/yancongcong1/blog/tree/master/groovy)
+> - #### [android](https://github.com/yancongcong1/blog/tree/master/android)
+> - #### [io/socket编程](https://github.com/yancongcong1/blog/tree/master/socket)
+> - #### [shiro](https://github.com/yancongcong1/blog/tree/master/shiro)
 ---
 
 ### 高并发、分布式
-> - #### [zookeeper](https://github.com/yancongcong1/study-log/tree/master/zookeeper)
-> - #### [nginx](https://github.com/yancongcong1/study-log/tree/master/nginx)
+> - #### [zookeeper](https://github.com/yancongcong1/blog/tree/master/zookeeper)
+> - #### [nginx](https://github.com/yancongcong1/blog/tree/master/nginx)
 ---
 
 ### 数据库
-> - #### [redis](https://github.com/yancongcong1/study-log/tree/master/redis)
-> - #### [elasticsearch](https://github.com/yancongcong1/study-log/tree/master/elastic)
+> - #### [redis](https://github.com/yancongcong1/blog/tree/master/redis)
+> - #### [elasticsearch](https://github.com/yancongcong1/blog/tree/master/elastic)
 ---
 
 ### 运维
-> - #### [linux](https://github.com/yancongcong1/study-log/tree/master/linux)
-> - #### [docker](https://github.com/yancongcong1/study-log/tree/master/docker)
-> - #### [kubernetes-ocp-helm](https://github.com/yancongcong1/study-log/tree/master/k8s-ocp-helm)
-> - #### [gitlab ci](https://github.com/yancongcong1/study-log/tree/master/gitlab-ci)
-> - #### [日志记录](https://github.com/yancongcong1/study-log/tree/master/log)
-> - #### [正则表达式](https://github.com/yancongcong1/study-log/tree/master/regex)
+> - #### [linux](https://github.com/yancongcong1/blog/tree/master/linux)
+> - #### [docker](https://github.com/yancongcong1/blog/tree/master/docker)
+> - #### [kubernetes-ocp-helm](https://github.com/yancongcong1/blog/tree/master/k8s-ocp-helm)
+> - #### [gitlab ci](https://github.com/yancongcong1/blog/tree/master/gitlab-ci)
+> - #### [日志记录](https://github.com/yancongcong1/blog/tree/master/log)
+> - #### [正则表达式](https://github.com/yancongcong1/blog/tree/master/regex)
 ---
 
 ### 精彩文章

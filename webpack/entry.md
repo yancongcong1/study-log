@@ -42,7 +42,7 @@ context: path.resolve(__dirname, '../')
 > 首先，我们新建一个conf文件夹，将配置文件改名为webpack.conf.js并放到conf下面，完成后目录如下：  
 >
 > **本节中为了查看多文件入口的效果，新加了print.js，关于output中的配置请查阅下一节。**  
-![image](https://github.com/yancongcong1/study-log/blob/master/webpack/static/images/lesson3-1.png)
+![image](https://github.com/yancongcong1/blog/blob/master/webpack/static/images/lesson3-1.png)
 
 - 2、修改我们的package.json文件，因为我们读取配置文件的方式已经改变了
 ```

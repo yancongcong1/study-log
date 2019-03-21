@@ -86,7 +86,7 @@ var webpackConfig = {
 
 - 2、修改项目结构，project结构如下：
 
-  ![image](https://github.com/yancongcong1/study-log/blob/master/webpack/static/images/lesson6-1.png)
+  ![image](https://github.com/yancongcong1/blog/blob/master/webpack/static/images/lesson6-1.png)
 
 
 - 3、安装插件

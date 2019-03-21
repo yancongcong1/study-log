@@ -2,7 +2,7 @@
 
 根据网上的方法，将npm的源配置为淘宝源，各种输出信息都没错，但是在install chromedriver这个模块的时候还是报错，按理说配置好源后所有的模块都会从淘宝源下载，但是在错误信息里看到了如下的内容：
 
-![](https://github.com/yancongcong1/study-log/blob/master/node/static/images/1-1.png)
+![](https://github.com/yancongcong1/blog/blob/master/node/static/images/1-1.png)
 
 实在是顽固不堪！
 

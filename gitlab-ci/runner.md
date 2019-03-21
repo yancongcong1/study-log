@@ -56,7 +56,7 @@ NOTE：在GitLab的8.2版本之后，Shared-Runner在项目中默认开启，但
 
 - 在**Settings ➔ CI/CD**页面获取项目的token
 
-![](https://github.com/yancongcong1/study-log/blob/master/gitlab-ci/static/images/lesson3-1.png)
+![](https://github.com/yancongcong1/blog/blob/master/gitlab-ci/static/images/lesson3-1.png)
 
 - 注册Runner
 
@@ -77,7 +77,7 @@ NOTE：在GitLab的8.2版本之后，Shared-Runner在项目中默认开启，但
 
 注册成功后你可以在自己的项目中看到如下信息：
 
-![](https://github.com/yancongcong1/study-log/blob/master/gitlab-ci/static/images/lesson3-2.png)
+![](https://github.com/yancongcong1/blog/blob/master/gitlab-ci/static/images/lesson3-2.png)
 
 上图中所有圈出的内容匹配则表示注册成功。
 
@@ -126,7 +126,7 @@ executor包含多种，一般我们使用shell，ssh或者docker，但是如果�
 
 > 问题描述：由于自己的操作问题，在安装runner时出现了问题，所以决定删除重安，但是一直出现如下错误：
 >
-> ![](https://github.com/yancongcong1/study-log/blob/master/gitlab-ci/static/images/lesson3-3.png)
+> ![](https://github.com/yancongcong1/blog/blob/master/gitlab-ci/static/images/lesson3-3.png)
 
 ​	A：这个问题是因为删除的时候注册表没有删除干净，这时候我们只需要找到相应的注册表删除重新安装就可以了，[参考文章](https://www.cnblogs.com/jiaoyiping/p/5638506.html)，注册表位置：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 
@@ -134,7 +134,7 @@ executor包含多种，一般我们使用shell，ssh或者docker，但是如果�
 
 > 问题描述：注册成功后运行gitlab-runner start启动服务，出现如下错误：
 >
-> ![](https://github.com/yancongcong1/study-log/blob/master/gitlab-ci/static/images/lesson3-4.png)
+> ![](https://github.com/yancongcong1/blog/blob/master/gitlab-ci/static/images/lesson3-4.png)
 
 ​	A：在网上扒了扒，发现有这么[一篇文章](https://support.threattracksecurity.com/support/solutions/articles/1000071019-error-1053-the-service-did-not-respond-in-a-timely-fashion-when-attempting-when-attempting-to-star)，感觉与我的问题有些相似，于是尝试了一下，结果果然成功了，千万记得重启电脑。出现问题的原因是机器设置的服务响应时间太短了，加长一些就行了。为什么会出现这样的问题该文章中说的比较清楚，这儿就不多说了。
 

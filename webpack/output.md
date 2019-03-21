@@ -29,7 +29,7 @@ webpack的output告诉webpack如何将已经编译好的文件写进磁盘。注
   filename: '[chunkhash].bundle.js'
   
 ```
-![image](https://github.com/yancongcong1/study-log/blob/master/webpack/static/images/lesson4-1.png)  
+![image](https://github.com/yancongcong1/blog/blob/master/webpack/static/images/lesson4-1.png)  
 
 
 

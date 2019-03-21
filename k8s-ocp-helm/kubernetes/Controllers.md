@@ -75,6 +75,13 @@ Job Controller负责根据Job Spec创建Pod，并持续监控Pod的状态，直�
 
 CronJob即定时任务，在指定的周期内执行指定的任务。
 
+### 限制
+
+在CronJob中有一些使用限制，具体情况轻阅读以下：
+
+- [Cron Job Limitations](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-job-limitations)
+- [what startingDeadlineSeconds  mean?](https://stackoverflow.com/questions/51065538/what-does-kubernetes-cronjobs-startingdeadlineseconds-exactly-mean)
+
 [CronJob字段详解](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#cronjobspec-v1beta1-batch)
 
 [CronJob其他用法](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)

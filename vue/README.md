@@ -4,5 +4,5 @@
 
 # 问题记录
 
-### - [父组件访问子组件方法的问题](https://github.com/yancongcong1/study-log/tree/master/vue/problem/parent-acquire-children.md)
-### - [Vue内置组件:插槽(slot)](https://github.com/yancongcong1/study-log/tree/master/vue/problem/slot.md)
+### - [父组件访问子组件方法的问题](https://github.com/yancongcong1/blog/tree/master/vue/problem/parent-acquire-children.md)
+### - [Vue内置组件:插槽(slot)](https://github.com/yancongcong1/blog/tree/master/vue/problem/slot.md)
