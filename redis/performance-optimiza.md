@@ -6,7 +6,7 @@
 
 
 
-## 提升查询速度
+## 使用pipeline
 
 ### 原理
 
@@ -40,6 +40,13 @@ redis使用C/S模型，客户端发起一次请求的基本流程如下：
 
   关于script用法请阅读command的scripting部分。
 
+
 ## 优化数据结构
 
 详细信息请参考[文档](https://redis.io/topics/memory-optimization)
+
+
+
+## 使用index
+
+[详细信息](https://redis.io/topics/indexes)
