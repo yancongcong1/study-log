@@ -2,12 +2,12 @@
 
 # 事务
 
-redis中支持事务，并且有相关的一组命令来操作事务。事务拥有以下特点：
+redis中支持事务，并且使用一组命令来操作事务。事务拥有以下特点：
 
 - 事务中的命令都被排序并且严格按照顺序来执行；
-- redis在执行一个事务的时候，不会执行其他的命令请求，保证了事务的独立性；
+- redis在执行一个事务的时候，不会执行其他的命令请求，这样保证了事务的独立性；
 - 事务中的命令要么全部执行，要么全不执行；
-- `exec`命令才会正真的触发事务开启，在此之前如果连接断开那么所有命令都不会执行，否则所有命令都会执行；
+- `exec`命令才会真正的触发事务开启，在此之前如果连接断开那么所有命令都不会执行，否则所有命令都会执行；
 
 
 
@@ -104,7 +104,7 @@ EXEC
 
 假设当前有两个客户端，客户端1执行了如上操作，另客户端2在其执行`exec`命令之前执行了`INCR mykey`操作，那么客户端1的命令结果如下所示：
 
-![](https://github.com/yancongcong1/blog/tree/master/redis/static/images/transactions.png)
+![https://github.com/yancongcong1/blog/tree/master/redis/static/images/transactions.png](https://github.com/yancongcong1/blog/tree/master/redis/static/images/transactions.png)
 
 > NOTE：前面说过redis在执行一个事务时不会执行其他的命令，请于这边的watch命令做理解区分。
 

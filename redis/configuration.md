@@ -26,7 +26,7 @@ redis允许在服务启动后修改配置。redis提供的`config set`和`config
 
 ## 配置缓存
 
-如果你的redis中的每个key都有过期时间，那么你可以通过设置最大内存的方式来配置缓存：
+如果你设计的redis中的每个key都有expire time，那么你可以通过设置最大内存的方式来配置缓存：
 
 ```
 maxmemory 2mb
