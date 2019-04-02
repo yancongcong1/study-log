@@ -8,3 +8,8 @@
 ### - [g快照技术详解(转载)](http://www.cnblogs.com/qcloud1001/p/9322321.html)
 ### - [gitignore详解](https://git-scm.com/docs/gitignore)
 ### - [gitignore有时失效问题(转载)](https://www.cnblogs.com/zzcc/p/5695883.html)
+
+
+# 碰到问题
+
+### - [使用http时不弹出认证窗口](https://github.com/yancongcong1/blog/tree/master/gitlab/http-authentication.md)
