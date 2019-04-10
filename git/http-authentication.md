@@ -22,7 +22,7 @@
 
   控制面板路径：用户账户和家庭安全--->凭据管理器
 
-  ![https://github.com/yancongcong1/blog/tree/master/git/static/images/http-authentication.png](https://github.com/yancongcong1/blog/tree/master/redis/static/images/http-authentication.png)
+  ![https://github.com/yancongcong1/blog/tree/master/git/static/images/http-authentication.png](https://github.com/yancongcong1/blog/tree/master/git/static/images/http-authentication.png)
 
 - **git认证配置缓存**(未测试)
 

@@ -12,4 +12,5 @@
 
 # 碰到问题
 
-### - [使用http时不弹出认证窗口](https://github.com/yancongcong1/blog/tree/master/gitlab/http-authentication.md)
+### - [使用http时不弹出认证窗口](https://github.com/yancongcong1/blog/tree/master/git/http-authentication.md)
+### - [传输大文件受限](https://github.com/yancongcong1/blog/tree/master/git/upload-bigfile.md)
