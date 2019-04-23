@@ -1,31 +1,3 @@
-# 全局属性
-
-accesskey
-
-class
-
-contenteditable
-
-dir
-
-draggable
-
-hidden
-
-id
-
-lang
-
-spellcheck
-
-style
-
-tabindex
-
-title
-
-translate
-
 # 事件处理
 
 onabort
@@ -153,7 +125,3 @@ onwaiting
 > The attributes marked with an asterisk have a different meaning when specified on body elements as those elements expose event handlers of the Window object with the same names.
 
 > While these attributes apply to all elements, they are not useful on all elements. For example, only media elements will ever receive a volumechange event fired by the user agent.
-
-# ARIA
-
-是方便残障人士更加便利的访问 Web 内容和使用 Web 应用（特别是那些由 Ajax 和 JavaScript 开发的）的一套机制。
