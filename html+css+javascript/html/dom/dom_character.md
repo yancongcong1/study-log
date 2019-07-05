@@ -49,6 +49,6 @@ Text接口表示Element对象或Attr对象的文本内容。如果一个元素�
 
 
 
-## ProcessiongInstruction
+## ProcessingInstruction
 
 这个不常用的接口表示 XML 文档中的一个处理指令（或 PI）。使用 HTML 文档的程序设计者不会遇到 ProcessingInstruction 节点。

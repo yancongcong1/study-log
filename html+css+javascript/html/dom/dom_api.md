@@ -66,6 +66,8 @@ DOM_API中包含许多接口定义，为了方便学习，我们可以从最顶�
 
 ### character
 
+详细信息请参考dom_character文档。
+
 - CharacterData
 - Text
 - Comment
@@ -81,7 +83,18 @@ DOM_API中包含许多接口定义，为了方便学习，我们可以从最顶�
 
 
 
+### observer
+
+详细信息请参考dom_observer文档。
+
+- MutationObserverInit
+- MutationRecord
+
+
+
 ### util
+
+详细信息请参考dom_util文档。
 
 - DOMException
 - DOMImplementation
@@ -95,9 +108,9 @@ DOM_API中包含许多接口定义，为了方便学习，我们可以从最顶�
 
 ### system
 
+详细信息请参考dom_system文档。
+
 - Window
 - URL
 - Worker
-- Tange
-- MutationObserver
-- MutationRecord
+- Range

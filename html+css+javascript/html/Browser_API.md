@@ -11,6 +11,7 @@
 浏览器API分为多个方面：
 
 - DOM_API：可以操作HTML文档(创建、移除以及修改元素)，还可以为页面动态添加样式
+- BOM_API：用于获取浏览器当前页面的信息
 - Ajax和Fetch_API：用于从服务器获取数据
 - Geolocation_API：用来获取地理位置信息
 - Canvas_API和WebGL_API：用来创建2d以及3d图像和动画
